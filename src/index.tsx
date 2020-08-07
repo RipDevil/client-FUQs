@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ReactQueryConfigProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query-devtools';
+
 import './index.css';
+import '@fortawesome/fontawesome-free/css/all.css'
+
 import App from 'containers/app/App';
+import ConfigWrapper from 'containers/configWrapper/ConfigWrapper';
+
 import * as serviceWorker from './serviceWorker';
 
+const queries = {
+  refetchOnWindowFocus: false,
+  retry: false
+};
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ReactQueryConfigProvider config={{ queries }}>
+    <ConfigWrapper>
+      <App />
+      <ReactQueryDevtools />
+    </ConfigWrapper>
+  </ReactQueryConfigProvider>,
   document.getElementById('root')
 );
 
