@@ -5,7 +5,7 @@ import { IntlProvider } from 'react-intl';
 
 import { configUpdate } from 'effects/config';
 
-type ConfigWrapperProps = {
+interface ConfigWrapperProps {
   children: ReactNode
 };
 
