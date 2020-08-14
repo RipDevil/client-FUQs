@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import { ReactQueryConfigProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query-devtools';
 
-import './index.css';
 import '@fortawesome/fontawesome-free/css/all.css'
+import 'antd/dist/antd.css'
+import './index.css';
+
 
 import App from 'containers/app/App';
 import ConfigWrapper from 'containers/configWrapper/ConfigWrapper';
