@@ -1,13 +1,10 @@
 import React, { ReactNode, useEffect } from 'react';
-import { useQuery } from 'react-query';
 import axios from 'axios';
+import { useQuery } from 'react-query';
 import { IntlProvider } from 'react-intl';
 
+import { ConfigWrapperProps } from './configWrapperTypes';
 import { configUpdate } from 'effects/config';
-
-interface ConfigWrapperProps {
-  children: ReactNode
-};
 
 const ConfigWrapper = ({ children }: ConfigWrapperProps): JSX.Element => { ///config.json
   const { data: config, isSuccess, isLoading, isError, error } = useQuery('fetchConfig', () => axios.get('/config.json').then(res => res.data));
