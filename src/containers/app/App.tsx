@@ -1,36 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect, RouteChildrenProps, RouteComponentProps, withRouter } from "react-router-dom";
-import { types } from 'util';
+import { BrowserRouter, Switch, Route, RouteComponentProps, withRouter } from "react-router-dom";
 
-function App() {
+function App(): JSX.Element {
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <div>main</div>
-        </Route>
-        <Route exact path="/:id">
-          <Test name="123" />
-        </Route>
-        <Route exact path="/badmin">
-          <div>badmin</div>
-        </Route>
+        <Route exact path="/" component={() => <h1><b>/</b></h1>} />
+        <Route exact path="/fuq/:id" component={() => <h1><b>/:id</b></h1>} />
+        <Route exact path="/badmin" component={() => <h1><b>/badmin</b></h1>} />
+        <Route exact path="*" component={() => <h1><b>/404</b></h1>} />
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 };
+// interface MatchParams {
+//   id: string
+// }
 
-interface TestTypes {
-  name: String
-}
-
-interface MatchParams {
-  id: string
-}
-
-const Test = withRouter(({name, match: { params } }: RouteComponentProps<MatchParams> & TestTypes): JSX.Element => {
-  const { id } = params;
-  return <span>{id}</span>
-});
+// const Test = withRouter(({match: { params } }: RouteComponentProps<MatchParams>): JSX.Element => {
+//   const { id } = params;
+//   return <span>{id}</span>
+// });
 
 export default App;
