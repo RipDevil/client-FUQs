@@ -7,8 +7,7 @@ export interface FuqMatchParams {
   id: string;
 }
 
-const Fuq: React.SFC<RouteComponentProps<FuqMatchParams>> = (props) => {
-  console.log('props :>> ', props);
+const Fuq: React.FC<RouteComponentProps<FuqMatchParams>> = (props) => {
   const {
     match: {
       params: { id },
