@@ -1,12 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
-
-const SpinnerDiv = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -50px 0px 0px -50px;
-`;
+import { StyledSpinner as s } from './commonStyled';
 
 export interface SpinnerProps {
   text?: string;
@@ -18,16 +11,19 @@ const Spinner: React.FC<SpinnerProps> = ({
   transparent = false, // TODO: implement this stuff
 }) => {
   return (
-    <SpinnerDiv>
-      <div>
-        <i className='fas fa-10x fa-spin fa-cog' />
-      </div>
-      {text && (
-        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-          <h3>Test</h3>
+    <>
+      <s.BackgroundDiv />
+      <s.SpinnerDiv>
+        <div>
+          <i className='fas fa-10x fa-spin fa-cog' />
         </div>
-      )}
-    </SpinnerDiv>
+        {text && (
+          <s.TextDiv>
+            <h3>{text}</h3>
+          </s.TextDiv>
+        )}
+      </s.SpinnerDiv>
+    </>
   );
 };
 
