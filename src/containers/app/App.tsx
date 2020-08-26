@@ -3,7 +3,7 @@ import { Switch, Route, HashRouter } from 'react-router-dom';
 import { useStore } from 'effector-react';
 
 import Spinner from 'components/common/Spinner';
-import $config, { ConfigType } from 'stores/config';
+import $config from 'stores/config';
 
 const Root = React.lazy(() => import('containers/root/Root'));
 const Fuq = React.lazy(() => import('containers/fuq/Fuq'));
