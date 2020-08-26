@@ -15,7 +15,6 @@
     "@types/styled-components": "^5.1.2",
     "antd": "^4.5.2",
     "axios": "^0.19.2",
-    "dotenv": "^8.2.0",
     "effector": "^21.2.1",
     "effector-react": "^21.0.4",
     "react": "^16.13.1",
