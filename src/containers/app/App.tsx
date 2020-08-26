@@ -11,7 +11,7 @@ const Admin = React.lazy(() => import('containers/admin/Admin'));
 const PageNotFound = React.lazy(() => import('containers/404/404'));
 
 const App: React.FC = () => {
-  const temp: ConfigType = useStore($config);
+  const temp = useStore($config);
   return (
     // TODO: implement transition spinner
     <React.Suspense fallback={<Spinner text='Loading the page' />}>
