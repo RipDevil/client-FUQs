@@ -1,4 +1,12 @@
 import * as React from 'react';
+import styled from 'styled-components';
+
+const SpinnerDiv = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0px 0px -50px;
+`;
 
 export interface SpinnerProps {
   text?: string;
@@ -10,7 +18,7 @@ const Spinner: React.FC<SpinnerProps> = ({
   transparent = false, // TODO: implement this stuff
 }) => {
   return (
-    <div className={`spinner ${transparent ? 'transparent' : ''}`}>
+    <SpinnerDiv>
       <div>
         <i className='fas fa-10x fa-spin fa-cog' />
       </div>
@@ -19,7 +27,7 @@ const Spinner: React.FC<SpinnerProps> = ({
           <h3>Test</h3>
         </div>
       )}
-    </div>
+    </SpinnerDiv>
   );
 };
 
