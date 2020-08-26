@@ -1,25 +1,20 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route, RouteComponentProps, withRouter } from "react-router-dom";
+import * as React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Fuq from 'containers/fuq/Fuq';
+import Admin from 'containers/admin/Admin';
+import PageNotFound from 'containers/404/404';
 
-function App(): JSX.Element {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={() => <h1><b>/</b></h1>} />
-        <Route exact path="/fuq/:id" component={() => <h1><b>/:id</b></h1>} />
-        <Route exact path="/badmin" component={() => <h1><b>/badmin</b></h1>} />
-        <Route exact path="*" component={() => <h1><b>/404</b></h1>} />
+        <Route exact path='/' component={() => <b>/</b>} />
+        <Route exact path='/fuq/:id' component={Fuq} />
+        <Route exact path='/badmin' component={Admin} />
+        <Route exact path='*' component={PageNotFound} />
       </Switch>
     </BrowserRouter>
   );
 };
-// interface MatchParams {
-//   id: string
-// }
-
-// const Test = withRouter(({match: { params } }: RouteComponentProps<MatchParams>): JSX.Element => {
-//   const { id } = params;
-//   return <span>{id}</span>
-// });
 
 export default App;
