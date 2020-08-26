@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import { IntlProvider } from 'react-intl';
@@ -6,8 +6,11 @@ import { IntlProvider } from 'react-intl';
 import { ConfigWrapperProps } from './configWrapperTypes';
 import { configUpdate } from 'effects/config';
 
-const ConfigWrapper = ({ children }: ConfigWrapperProps): JSX.Element => { ///config.json
-  const { data: config, isSuccess, isLoading, isError, error } = useQuery('fetchConfig', () => axios.get('/config.json').then(res => res.data));
+const ConfigWrapper = ({ children }: ConfigWrapperProps): JSX.Element => {
+  ///config.json
+  const { data: config, isSuccess, isLoading } = useQuery('fetchConfig', () =>
+    axios.get('/config.json').then((res) => res.data)
+  );
   const locale = navigator.language;
 
   useEffect(() => {
@@ -16,13 +19,9 @@ const ConfigWrapper = ({ children }: ConfigWrapperProps): JSX.Element => { ///co
   }, [isSuccess, config]);
 
   return (
-    <IntlProvider messages={{}} locale={locale} defaultLocale="ru">
-      {isLoading && <i className="fab fa-accessible-icon" />}
-      {isSuccess && (
-        <div>
-          {children}
-        </div>
-      )}
+    <IntlProvider messages={{}} locale={locale} defaultLocale='ru'>
+      {isLoading && <i className='fab fa-accessible-icon' />}
+      {isSuccess && <div>{children}</div>}
     </IntlProvider>
   );
 };
