@@ -7,7 +7,6 @@ import { ConfigWrapperProps } from './configWrapperTypes';
 import { configUpdate } from 'effects/config';
 
 const ConfigWrapper = ({ children }: ConfigWrapperProps): JSX.Element => {
-  ///config.json
   const { data: config, isSuccess, isLoading } = useQuery('fetchConfig', () =>
     axios.get('/config.json').then((res) => res.data)
   );
@@ -20,7 +19,7 @@ const ConfigWrapper = ({ children }: ConfigWrapperProps): JSX.Element => {
 
   return (
     <IntlProvider messages={{}} locale={locale} defaultLocale='ru'>
-      {isLoading && <i className='fab fa-accessible-icon' />}
+      {isLoading && <i className='fab fa-spin fa-accessible-icon' />}
       {isSuccess && <div>{children}</div>}
     </IntlProvider>
   );

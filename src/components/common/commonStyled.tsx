@@ -16,7 +16,7 @@ export const StyledSpinner = {
     width: 100%;
     height: 100%;
     z-index: 999;
-    background-color: rgb(255, 255, 255);
+    background-color: #fdfdfd;
   `,
   TextDiv: styled.div`
     text-align: center;
