@@ -1,5 +1,5 @@
 import * as React from 'react';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { useStore } from 'effector-react';
 import { useQuery } from 'react-query';
 // import { Row, Col } from 'antd';
@@ -23,7 +23,7 @@ const Root: React.FC = () => {
     server,
   } = useStore($config);
 
-  const { data, isSuccess, isError, error } = useQuery('get a single FUQ', () =>
+  const { data, isSuccess, isError, error } = useQuery('Get a single FUQ', () =>
     axios.get(`${server}${fuq?.get}`).then((res): FuqProps => res.data)
   );
 
