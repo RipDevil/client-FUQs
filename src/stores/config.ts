@@ -2,9 +2,17 @@ import { createStore } from 'effector';
 
 import { configUpdate } from 'effects/config';
 
-const $config = createStore<Object>({});
+export interface ConfigType {
+  server: string;
+  routes: {
+    fuq?: string;
+    badmin?: string;
+    root?: string;
+  };
+}
 
-$config
-  .on(configUpdate, (_, payload) => payload);
+const $config = createStore<ConfigType>({ server: '', routes: {} });
+
+$config.on(configUpdate, (_, payload): ConfigType => payload);
 
 export default $config;

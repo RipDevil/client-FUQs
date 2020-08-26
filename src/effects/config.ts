@@ -1,7 +1,5 @@
 import { createEvent } from 'effector';
+import { ConfigType } from 'stores/config';
+const configUpdate = createEvent<ConfigType>('update config');
 
-const configUpdate = createEvent<Object>('update config');
-
-export {
-  configUpdate
-};
+export { configUpdate };
