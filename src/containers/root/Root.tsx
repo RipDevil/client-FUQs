@@ -6,8 +6,9 @@ import { useQuery } from 'react-query';
 
 import $config from 'stores/config';
 import Layout from 'containers/layout/Layout';
+import Spinner from 'components/common/Spinner';
 
-export interface FuqProps {
+export interface GetFuqResponse {
   _id: string;
   likes: number;
   _lastEditor: string;
@@ -23,13 +24,20 @@ const Root: React.FC = () => {
     server,
   } = useStore($config);
 
-  const { data, isSuccess, isError, error } = useQuery('Get a single FUQ', () =>
-    axios.get(`${server}${fuq?.get}`).then((res): FuqProps => res.data)
+  const {
+    isFetching,
+    data,
+    isSuccess,
+    isError,
+    error,
+  } = useQuery('Get a single FUQ', () =>
+    axios.get(`${server}${fuq?.get}`).then((res): GetFuqResponse => res.data)
   );
 
   return (
     <Layout span={24}>
       {isError && error && error.message}
+      {isFetching && <Spinner text='Loading a FUQ' />}
       {isSuccess && data?.text}
     </Layout>
   );
