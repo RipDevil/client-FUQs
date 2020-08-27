@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Row } from 'antd';
 
 const StyledRow = styled(Row)`
-  margin-top: 50vh;
+  padding-top: 50vh;
 `;
 
 export interface LayoutProps {
