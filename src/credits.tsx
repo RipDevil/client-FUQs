@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const CreditsComponent = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
+  left: 10;
   z-index: 1001;
   overflow: hidden;
   font-size: 10px;
