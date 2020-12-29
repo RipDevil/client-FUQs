@@ -2,9 +2,7 @@ import * as React from 'react';
 
 import Layout from 'containers/layout/Layout';
 
-export interface PageNotFoundProps {}
-
-const PageNotFound: React.FC<PageNotFoundProps> = () => {
+const PageNotFound: React.FC = () => {
   return (
     <Layout>
       <b>/404</b>

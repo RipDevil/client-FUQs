@@ -6,11 +6,7 @@ const StyledRow = styled(Row)`
   padding-top: 50vh;
 `;
 
-export interface LayoutProps {
-  span?: number;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children, span = 2 }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <StyledRow align='middle' justify='center'>
       {children}

@@ -2,7 +2,6 @@ import * as React from 'react';
 import axios from 'axios';
 import { useStore } from 'effector-react';
 import { useQuery } from 'react-query';
-// import { Row, Col } from 'antd';
 
 import $config from 'stores/config';
 import Layout from 'containers/layout/Layout';
@@ -35,7 +34,7 @@ const Root: React.FC = () => {
   );
 
   return (
-    <Layout span={24}>
+    <Layout>
       {isError && error && error.message}
       {isFetching && <Spinner text='Loading a FUQ' />}
       {isSuccess && data?.text}

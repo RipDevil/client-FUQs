@@ -3,17 +3,15 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { IntlProvider } from 'react-intl';
 
-import { ConfigWrapperProps } from './configWrapperTypes';
 import { configUpdate } from 'effects/config';
 
-const ConfigWrapper = ({ children }: ConfigWrapperProps): JSX.Element => {
+const ConfigWrapper: React.FC = ({ children }) => {
   const { data: config, isSuccess, isLoading } = useQuery('fetchConfig', () =>
     axios.get('/config.json').then((res) => res.data)
   );
   const locale = navigator.language;
 
   useEffect(() => {
-    console.log('CONFIG :>> ', config);
     isSuccess && configUpdate(config);
   }, [isSuccess, config]);
 

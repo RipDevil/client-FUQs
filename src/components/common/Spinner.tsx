@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyledSpinner as s } from './commonStyled';
+import { StyledSpinner as S } from './commonStyled';
 
 export interface SpinnerProps {
   text?: string;
@@ -12,17 +12,17 @@ const Spinner: React.FC<SpinnerProps> = ({
 }) => {
   return (
     <>
-      <s.BackgroundDiv />
-      <s.SpinnerDiv>
+      <S.BackgroundDiv />
+      <S.SpinnerDiv>
         <div>
           <i className='fas fa-10x fa-spin fa-cog' />
         </div>
         {text && (
-          <s.TextDiv>
+          <S.TextDiv>
             <h3>{text}</h3>
-          </s.TextDiv>
+          </S.TextDiv>
         )}
-      </s.SpinnerDiv>
+      </S.SpinnerDiv>
     </>
   );
 };
