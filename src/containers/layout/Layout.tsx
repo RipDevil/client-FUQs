@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { Row } from 'antd';
 
 const StyledRow = styled(Row)`
-  padding-top: 50vh;
+  padding-top: 40vh;
+  text-align: center;
 `;
 
 const Layout: React.FC = ({ children }) => {

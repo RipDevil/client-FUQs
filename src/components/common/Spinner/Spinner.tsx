@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { StyledSpinner as S } from './commonStyled';
+import { Typography } from 'antd';
+
+import { BackgroundDiv, SpinnerDiv, TextDiv } from './Spinner.styled';
+
+const { Title } = Typography;
 
 export interface SpinnerProps {
   text?: string;
@@ -12,17 +16,17 @@ const Spinner: React.FC<SpinnerProps> = ({
 }) => {
   return (
     <>
-      <S.BackgroundDiv />
-      <S.SpinnerDiv>
+      <BackgroundDiv transparent={transparent} />
+      <SpinnerDiv>
         <div>
           <i className='fas fa-10x fa-spin fa-cog' />
         </div>
         {text && (
-          <S.TextDiv>
-            <h3>{text}</h3>
-          </S.TextDiv>
+          <TextDiv>
+            <Title level={3} type='danger'>{text}</Title>
+          </TextDiv>
         )}
-      </S.SpinnerDiv>
+      </SpinnerDiv>
     </>
   );
 };
