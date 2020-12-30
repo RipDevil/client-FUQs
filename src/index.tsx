@@ -7,9 +7,9 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import 'antd/dist/antd.css';
 import './index.css';
 
-import App from 'containers/app/App';
+import App from 'app';
 import Credits from 'credits';
-import ConfigWrapper from 'containers/configWrapper/ConfigWrapper';
+import ConfigWrapper from 'config';
 
 import * as serviceWorker from './serviceWorker';
 

@@ -7,12 +7,10 @@ const StyledRow = styled(Row)`
   text-align: center;
 `;
 
-const Layout: React.FC = ({ children }) => {
+export const Layout: React.FC = ({ children }) => {
   return (
     <StyledRow align='middle' justify='center'>
       {children}
     </StyledRow>
   );
 };
-
-export default Layout;

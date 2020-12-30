@@ -1,10 +1,5 @@
 {
-  "server": "",
-  "routes": {
-    "fuq": "/fuq/:id",
-    "badmin": "/badmin",
-    "root": "/"
-  },
+  "server": "http://10.10.1.12:4242",
   "api": {
     "fuq": {
       "get": "/fuq",

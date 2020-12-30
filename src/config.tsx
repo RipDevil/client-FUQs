@@ -1,14 +1,22 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useQuery } from 'react-query';
+import { useStore } from 'effector-react';
 import { IntlProvider } from 'react-intl';
 
+import Spinner from 'components/common/Spinner';
+import $config from 'stores/config';
 import { configUpdate } from 'effects/config';
 
 const ConfigWrapper: React.FC = ({ children }) => {
   const { data: config, isSuccess, isLoading } = useQuery('fetchConfig', () =>
     axios.get('/config.json').then((res) => res.data)
   );
+
+  const {
+    server
+  } = useStore($config);
+
   const locale = navigator.language;
 
   useEffect(() => {
@@ -17,8 +25,8 @@ const ConfigWrapper: React.FC = ({ children }) => {
 
   return (
     <IntlProvider messages={{}} locale={locale} defaultLocale='ru'>
-      {isLoading && <i className='fab fa-spin fa-accessible-icon' />}
-      {isSuccess && <div>{children}</div>}
+      {isLoading && <Spinner transparent={false} text='Loading config' />}
+      {isSuccess && server && <div>{children}</div>}
     </IntlProvider>
   );
 };

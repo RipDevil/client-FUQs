@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-import Layout from 'containers/layout/Layout';
+import { Layout } from 'templates';
 
 export interface FuqMatchParams {
   id: string;

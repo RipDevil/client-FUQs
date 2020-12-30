@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Layout from 'containers/layout/Layout';
+import { Layout } from 'templates';
 
 const PageNotFound: React.FC = () => {
   return (

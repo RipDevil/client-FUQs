@@ -1,5 +1,6 @@
 import * as React from 'react';
-import Layout from 'containers/layout/Layout';
+
+import { Layout } from 'templates';
 // import Spinner from 'components/common/Spinner';
 
 const Admin: React.FC = () => {

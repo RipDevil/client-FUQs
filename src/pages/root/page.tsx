@@ -4,7 +4,7 @@ import { useStore } from 'effector-react';
 import { useQuery } from 'react-query';
 
 import $config from 'stores/config';
-import Layout from 'containers/layout/Layout';
+import { Layout } from 'templates';
 import Spinner from 'components/common/Spinner';
 import FuqCard from 'components/common/FuqCard';
 
@@ -36,8 +36,8 @@ const Root: React.FC = () => {
 
   return (
     <Layout>
-      {isError && error && error.message}
-      {isFetching && <Spinner transparent={true} text='Loading a FUQ' />}
+      {isError && error && <FuqCard text={error.message} title="Error"/>}
+      {isFetching && <Spinner text='Loading a FUQ' />}
       {isSuccess && <FuqCard text={data?.text} title={data?.title}/>}
     </Layout>
   );
