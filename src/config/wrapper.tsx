@@ -4,23 +4,20 @@ import { useQuery } from 'react-query';
 import { useStore } from 'effector-react';
 import { IntlProvider } from 'react-intl';
 
-import Spinner from 'components/common/Spinner';
-import $config from 'stores/config';
-import { configUpdate } from 'effects/config';
+import { Spinner } from 'components/common';
+import { configUpdate, $config, ConfigType } from './model';
 
-const ConfigWrapper: React.FC = ({ children }) => {
+export const ConfigWrapper: React.FC = ({ children }) => {
   const { data: config, isSuccess, isLoading } = useQuery('fetchConfig', () =>
-    axios.get('/config.json').then((res) => res.data)
+    axios.get('/config.json').then((res): ConfigType => res.data)
   );
 
-  const {
-    server
-  } = useStore($config);
+  const { server } = useStore($config);
 
   const locale = navigator.language;
 
   useEffect(() => {
-    isSuccess && configUpdate(config);
+    isSuccess && config && configUpdate(config);
   }, [isSuccess, config]);
 
   return (
@@ -30,5 +27,3 @@ const ConfigWrapper: React.FC = ({ children }) => {
     </IntlProvider>
   );
 };
-
-export default ConfigWrapper;

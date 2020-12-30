@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Typography } from 'antd';
 
-import { BackgroundDiv, SpinnerDiv, TextDiv } from './Spinner.styled';
+import { BackgroundDiv, SpinnerDiv, TextDiv } from './spinner.styled';
 
 const { Title } = Typography;
 
@@ -10,7 +10,7 @@ export interface SpinnerProps {
   transparent?: boolean;
 }
 
-const Spinner: React.FC<SpinnerProps> = ({
+export const Spinner: React.FC<SpinnerProps> = ({
   text = '',
   transparent = false, // TODO: implement this stuff
 }) => {
@@ -23,12 +23,12 @@ const Spinner: React.FC<SpinnerProps> = ({
         </div>
         {text && (
           <TextDiv>
-            <Title level={3} type='danger'>{text}</Title>
+            <Title level={3} type='danger'>
+              {text}
+            </Title>
           </TextDiv>
         )}
       </SpinnerDiv>
     </>
   );
 };
-
-export default Spinner;

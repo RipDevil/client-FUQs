@@ -8,8 +8,8 @@ import 'antd/dist/antd.css';
 import './index.css';
 
 import App from 'app';
-import Credits from 'credits';
-import ConfigWrapper from 'config';
+import { Credits } from 'components/common';
+import { ConfigWrapper } from 'config';
 
 import * as serviceWorker from './serviceWorker';
 

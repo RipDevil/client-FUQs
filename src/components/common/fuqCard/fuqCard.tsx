@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Row, Col, Typography } from 'antd';
-import { StyledTitle } from './FuqCart.styled';
+import { StyledTitle } from './fuqCart.styled';
 
 const { Title } = Typography;
 
@@ -10,7 +10,7 @@ export interface FuqCardProps {
   text: string | undefined;
 }
 
-const FuqCard: React.FC<FuqCardProps> = ({ text, title }) => {
+export const FuqCard: React.FC<FuqCardProps> = ({ text, title }) => {
   return (
     <Col title={text}>
       <Row justify='center'>
@@ -26,5 +26,3 @@ const FuqCard: React.FC<FuqCardProps> = ({ text, title }) => {
     </Col>
   );
 };
-
-export default FuqCard;

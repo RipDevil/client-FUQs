@@ -3,10 +3,9 @@ import axios from 'axios';
 import { useStore } from 'effector-react';
 import { useQuery } from 'react-query';
 
-import $config from 'stores/config';
+import { $config } from 'config/model';
 import { Layout } from 'templates';
-import Spinner from 'components/common/Spinner';
-import FuqCard from 'components/common/FuqCard';
+import { Spinner, FuqCard } from 'components/common';
 
 export interface GetFuqResponse {
   _id: string;

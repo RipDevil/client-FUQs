@@ -1,21 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
-const CreditsComponent = styled.div`
-  position: fixed;
-  top: 0;
-  left: 10;
-  z-index: 1001;
-  overflow: hidden;
-  font-size: 10px;
-  transition: 500ms ease;
-  &:hover {
-    font-size: 12px;
-    bacground-color: lightyellow;
-  }
-`;
+import { CreditsComponent } from './credits.styled';
 
-const Credits: React.FC = () => {
+export const Credits: React.FC = () => {
   const development = process.env.NODE_ENV === 'development';
   return development ? (
     <CreditsComponent>
@@ -43,5 +30,3 @@ const Credits: React.FC = () => {
     </CreditsComponent>
   ) : null;
 };
-
-export default Credits;
