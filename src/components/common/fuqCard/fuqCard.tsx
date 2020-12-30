@@ -6,8 +6,8 @@ import { StyledTitle } from './fuqCart.styled';
 const { Title } = Typography;
 
 export interface FuqCardProps {
-  title: string | undefined;
-  text: string | undefined;
+  title: string;
+  text: string;
 }
 
 export const FuqCard: React.FC<FuqCardProps> = ({ text, title }) => {

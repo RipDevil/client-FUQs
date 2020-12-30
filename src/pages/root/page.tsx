@@ -37,7 +37,7 @@ const Root: React.FC = () => {
     <Layout>
       {isError && error && <FuqCard text={error.message} title="Error"/>}
       {isFetching && <Spinner text='Loading a FUQ' />}
-      {isSuccess && <FuqCard text={data?.text} title={data?.title}/>}
+      {isSuccess && <FuqCard text={data?.text || ''} title={data?.title || ''}/>}
     </Layout>
   );
 };
