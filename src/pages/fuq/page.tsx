@@ -2,23 +2,25 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 import { Layout } from 'templates';
+import { Spinner, FuqCard } from 'components/common';
+import { useSingleFuq } from 'api';
 
 export interface FuqMatchParams {
-  id: string;
+  id?: string;
 }
 
-const Fuq: React.FC<RouteComponentProps<FuqMatchParams>> = (props) => {
-  const {
-    match: {
-      params: { id },
-    },
-  } = props;
+const SingleFuq: React.FC<RouteComponentProps<FuqMatchParams>>  = (props) => {
+  const { isFetching, data: fuq, isSuccess, isError, error } = useSingleFuq(props.match.params.id);
 
   return (
     <Layout>
-      <b>/fuq/{id}</b>
+      {isError && error && <FuqCard text={error.message} title='Error' />}
+      {isFetching && <Spinner text='Loading a FUQ' />}
+      {isSuccess && (
+        <FuqCard text={fuq?.text || ''} title={fuq?.title || ''} />
+      )}
     </Layout>
   );
 };
 
-export default Fuq;
+export default SingleFuq;
