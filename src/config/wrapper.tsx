@@ -1,18 +1,14 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
-import { useQuery } from 'react-query';
 import { useStore } from 'effector-react';
 import { IntlProvider } from 'react-intl';
 
 import { Spinner } from 'components/common';
-import { configUpdate, $config, ConfigType } from './model';
+import { configUpdate, $config } from './model';
+import { useConfig } from 'api';
 
 export const ConfigWrapper: React.FC = ({ children }) => {
-  const { data: config, isSuccess, isLoading } = useQuery('fetchConfig', () =>
-    axios.get('/config.json').then((res): ConfigType => res.data)
-  );
-
   const { server } = useStore($config);
+  const { data: config, isSuccess, isLoading } = useConfig();
 
   const locale = navigator.language;
 
