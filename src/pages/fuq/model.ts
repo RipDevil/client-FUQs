@@ -1,4 +1,3 @@
-
 export interface FuqType {
   _id: string;
   likes: number;

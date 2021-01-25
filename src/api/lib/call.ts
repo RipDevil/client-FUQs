@@ -7,6 +7,13 @@ type Params = {
 
 type methodTypes = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
+/**
+ * Makes a call
+ * @param url
+ * @param method accepts `GET | POST | PUT | DELETE` methods
+ * @param params
+ * @type RType takes an interface which should be returned from the server
+ */
 export function call<RType>(url: string, method: methodTypes, params?: Params) {
   let config: object = {
     url,
@@ -26,9 +33,16 @@ export function call<RType>(url: string, method: methodTypes, params?: Params) {
   });
 }
 
+/**
+ * Logs all fetches if it's a dev env and if there is an `api-debug` field in the localStorage
+ * @param url
+ * @param method
+ * @param config
+ * @param data
+ */
 function logCall(url: string, method: methodTypes, config: object, data:object) {
   if (process.env.NODE_ENV === 'development' && localStorage.getItem("api-debug")) {
-    console.groupCollapsed(`API >> ${method} ${url}`);
+    console.groupCollapsed(`API CALL >> ${method} ${url}`);
     console.log('request:', config);
     console.log('data:', data);
     console.groupEnd();

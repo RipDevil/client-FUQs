@@ -5,6 +5,10 @@ import { $config } from 'config/model';
 import { call } from './lib';
 import { FuqType } from 'pages/fuq/model';
 
+/**
+ * Can return a single FUQ randomly or not if the ID param is presented
+ * @param id - id of a FUQ
+ */
 export const useSingleFuq = (id?:string) => {
   const {
     api: { fuq },

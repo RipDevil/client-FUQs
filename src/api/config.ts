@@ -8,6 +8,9 @@ import { ConfigType } from 'config/model';
 //   [key: string]: string
 // };
 
+/**
+ * Fetches the config file with basename
+ */
 export const useConfig = () => {
   return useQuery<ConfigType, string, AxiosError>('Get configuration file', () => call('/config.json', 'GET'));
 };
