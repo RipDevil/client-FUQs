@@ -4,10 +4,6 @@ import { useQuery } from 'react-query';
 import { call } from './lib';
 import { ConfigType } from 'config/model';
 
-// type Params = {
-//   [key: string]: string
-// };
-
 /**
  * Fetches the config file with basename
  */
