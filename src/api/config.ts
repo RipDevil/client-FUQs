@@ -12,7 +12,7 @@ import { ConfigType } from 'config/model';
  * Fetches the config file with basename
  */
 export const useConfig = () => {
-  const a = 'Test';
+  const b = 'Test'; 
 
   return useQuery<unknown, AxiosError, ConfigType>("Get configuration file", () => call('/config.json', 'GET'));
 };
