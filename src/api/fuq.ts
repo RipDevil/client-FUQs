@@ -15,5 +15,5 @@ export const useSingleFuq = (id?:string) => {
     server,
   } = $config.getState();
 
-  return useQuery<FuqType, string, AxiosError>(`Get ${id ? 'random' : 'single'} FUQ`, () => call(`${server}${fuq?.get}${id ? '/'+id : ''}`, 'GET'));
+  return useQuery<unknown, AxiosError, FuqType>(`Get ${id ? 'random' : 'single'} FUQ`, () => call(`${server}${fuq?.get}${id ? '/'+id : ''}`, 'GET'));
 };

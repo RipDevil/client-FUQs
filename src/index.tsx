@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ReactQueryConfigProvider } from 'react-query';
+import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query-devtools';
 
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -13,19 +13,23 @@ import { ConfigWrapper } from 'config';
 
 import * as serviceWorker from './serviceWorker';
 
-const queries = {
-  refetchOnWindowFocus: false,
-  retry: false,
-};
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: false,
+    }
+  }
+});
 
 ReactDOM.render(
-  <ReactQueryConfigProvider config={{ queries }}>
+  <QueryClientProvider client={client}>
     <ConfigWrapper>
       <Credits />
       <App />
       <ReactQueryDevtools />
     </ConfigWrapper>
-  </ReactQueryConfigProvider>,
+  </QueryClientProvider >,
   document.getElementById('root')
 );
 
