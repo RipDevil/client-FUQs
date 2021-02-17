@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"./src/**/*.+(js|jsx|ts|tsx)\"",
     "lint:fix": "eslint \"./src/**/*.+(js|jsx|ts|tsx)\" --fix",
-    "format": "prettier --config .prettierrc --write \"src/**/*.+(js|jsx|ts|tsx|json|css|md)\""
+    "format": "prettier --config .prettierrc --write \"src/**/*.+(js|jsx|ts|tsx|json|css|md)\"",
+    "postinstall": "husky install"
   },
   "eslintConfig": {
     "extends": "react-app"
