@@ -9,11 +9,13 @@ import { FuqType } from 'pages/fuq/model';
  * Can return a single FUQ randomly or not if the ID param is presented
  * @param id - id of a FUQ
  */
-export const useSingleFuq = (id?:string) => {
+export const useSingleFuq = (id?: string) => {
   const {
     api: { fuq },
     server,
   } = $config.getState();
 
-  return useQuery<unknown, AxiosError, FuqType>(`Get ${id ? 'random' : 'single'} FUQ`, () => call(`${server}${fuq?.get}${id ? '/'+id : ''}`, 'GET'));
+  return useQuery<unknown, AxiosError, FuqType>(`Get ${id ? 'random' : 'single'} FUQ`, () =>
+    call(`${server}${fuq?.get}${id ? '/' + id : ''}`, 'GET'),
+  );
 };

@@ -17,8 +17,8 @@ export const ConfigWrapper: React.FC = ({ children }) => {
   }, [isSuccess, config]);
 
   return (
-    <IntlProvider messages={{}} locale={locale} defaultLocale='ru'>
-      {isLoading && <Spinner transparent={false} text='Loading config' />}
+    <IntlProvider messages={{}} locale={locale} defaultLocale="ru">
+      {isLoading && <Spinner transparent={false} text="Loading config" />}
       {isSuccess && server && <div>{children}</div>}
     </IntlProvider>
   );

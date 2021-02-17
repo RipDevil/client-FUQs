@@ -5,11 +5,11 @@ import { Routes } from 'routes';
 
 const App: React.FC = () => {
   return (
-      <HashRouter>
-        <Switch>
-          <Routes />
-        </Switch>
-      </HashRouter>
+    <HashRouter>
+      <Switch>
+        <Routes />
+      </Switch>
+    </HashRouter>
   );
 };
 

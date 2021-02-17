@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export interface BackgroundDivProps {
   transparent: boolean;
   theme: object | undefined;
-};
+}
 
 export const SpinnerDiv = styled.div`
   position: fixed;

@@ -9,16 +9,14 @@ export interface FuqMatchParams {
   id?: string;
 }
 
-const SingleFuq: React.FC<RouteComponentProps<FuqMatchParams>>  = (props) => {
+const SingleFuq: React.FC<RouteComponentProps<FuqMatchParams>> = (props) => {
   const { isFetching, data: fuq, isSuccess, isError, error } = useSingleFuq(props.match.params.id);
 
   return (
     <Layout>
-      {isError && error && <FuqCard text={error.message} title='Error' />}
-      {isFetching && <Spinner text='Loading a FUQ' />}
-      {isSuccess && (
-        <FuqCard text={fuq?.text || ''} title={fuq?.title || ''} />
-      )}
+      {isError && error && <FuqCard text={error.message} title="Error" />}
+      {isFetching && <Spinner text="Loading a FUQ" />}
+      {isSuccess && <FuqCard text={fuq?.text || ''} title={fuq?.title || ''} />}
     </Layout>
   );
 };

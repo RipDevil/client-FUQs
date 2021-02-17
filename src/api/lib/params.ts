@@ -1,5 +1,5 @@
 type Params = {
-  [key: string]: string
+  [key: string]: string;
 };
 
 export function preparePostParams(params: Params): URLSearchParams {
@@ -8,4 +8,4 @@ export function preparePostParams(params: Params): URLSearchParams {
     postParams.append(param, params[param]);
   }
   return postParams;
-};
+}

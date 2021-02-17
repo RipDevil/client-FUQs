@@ -9,7 +9,7 @@ const StyledRow = styled(Row)`
 
 export const Layout: React.FC = ({ children }) => {
   return (
-    <StyledRow align='middle' justify='center'>
+    <StyledRow align="middle" justify="center">
       {children}
     </StyledRow>
   );

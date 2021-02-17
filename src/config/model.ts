@@ -17,9 +17,6 @@ const $config = createStore<ConfigType>(defaultConfig);
 
 const configUpdate = createEvent<ConfigType>('update config');
 
-$config.on(
-  configUpdate,
-  (state, payload): ConfigType => ({ ...state, ...payload })
-);
+$config.on(configUpdate, (state, payload): ConfigType => ({ ...state, ...payload }));
 
 export { configUpdate, $config };

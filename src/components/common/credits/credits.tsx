@@ -7,23 +7,19 @@ export const Credits: React.FC = () => {
   return development ? (
     <CreditsComponent>
       <span>
-        <a href='https://github.com/RipDevil' title='RipDevil github page'>
+        <a href="https://github.com/RipDevil" title="RipDevil github page">
           Github
         </a>
-        <a
-          href='https://github.com/users/RipDevil/projects/1'
-          title='Projects in github'>
+        <a href="https://github.com/users/RipDevil/projects/1" title="Projects in github">
           /fuq
         </a>
-        <a
-          href='https://github.com/RipDevil/client-FUQs'
-          title='Client repo in github'>
+        <a href="https://github.com/RipDevil/client-FUQs" title="Client repo in github">
           /cli
         </a>
       </span>
       <br />
       <span>
-        <a href='https://ripdevil.github.io/#/' title='Github pages'>
+        <a href="https://ripdevil.github.io/#/" title="Github pages">
           WebInstance
         </a>
       </span>

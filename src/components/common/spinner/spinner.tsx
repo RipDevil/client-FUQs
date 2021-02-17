@@ -19,11 +19,11 @@ export const Spinner: React.FC<SpinnerProps> = ({
       <BackgroundDiv transparent={transparent} />
       <SpinnerDiv>
         <div>
-          <i className='fas fa-10x fa-spin fa-cog' />
+          <i className="fas fa-10x fa-spin fa-cog" />
         </div>
         {text && (
           <TextDiv>
-            <Title level={3} type='danger'>
+            <Title level={3} type="danger">
               {text}
             </Title>
           </TextDiv>

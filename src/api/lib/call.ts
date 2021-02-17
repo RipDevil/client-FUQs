@@ -27,10 +27,12 @@ export function call<RType>(url: string, method: methodTypes, params?: Params) {
     };
   }
 
-  return axios(config).then((res): RType => {
-    logCall(url, method, config, res.data);
-    return res.data
-  });
+  return axios(config).then(
+    (res): RType => {
+      logCall(url, method, config, res.data);
+      return res.data;
+    },
+  );
 }
 
 /**
@@ -40,8 +42,8 @@ export function call<RType>(url: string, method: methodTypes, params?: Params) {
  * @param config
  * @param data
  */
-function logCall(url: string, method: methodTypes, config: object, data:object) {
-  if (process.env.NODE_ENV === 'development' && localStorage.getItem("api-debug")) {
+function logCall(url: string, method: methodTypes, config: object, data: object) {
+  if (process.env.NODE_ENV === 'development' && localStorage.getItem('api-debug')) {
     console.groupCollapsed(`API CALL >> ${method} ${url}`);
     console.log('request:', config);
     console.log('data:', data);

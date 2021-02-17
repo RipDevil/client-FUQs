@@ -6,4 +6,4 @@ export interface FuqType {
   title: string;
   text: string;
   crdate: string;
-};
+}

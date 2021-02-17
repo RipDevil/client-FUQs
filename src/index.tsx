@@ -18,8 +18,8 @@ const client = new QueryClient({
     queries: {
       refetchOnWindowFocus: false,
       retry: false,
-    }
-  }
+    },
+  },
 });
 
 ReactDOM.render(
@@ -29,8 +29,8 @@ ReactDOM.render(
       <App />
       <ReactQueryDevtools />
     </ConfigWrapper>
-  </QueryClientProvider >,
-  document.getElementById('root')
+  </QueryClientProvider>,
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
