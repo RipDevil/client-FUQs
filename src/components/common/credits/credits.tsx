@@ -2,9 +2,12 @@ import * as React from 'react';
 
 import { CreditsComponent } from './credits.styled';
 
-export const Credits: React.FC = () => {
-  const development = process.env.NODE_ENV === 'development';
-  return development ? (
+interface CreditsTypes {
+  env: string;
+}
+
+export const Credits: React.FC<CreditsTypes> = ({ env }) => {
+  return env === 'development' ? (
     <CreditsComponent>
       <span>
         <a href="https://github.com/RipDevil" title="RipDevil github page">

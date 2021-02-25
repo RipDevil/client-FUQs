@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Credits tests Should be rendered if in development 1`] = `
+<a
+  href="https://github.com/RipDevil"
+  title="RipDevil github page"
+>
+  Github
+</a>
+`;
+
+exports[`Credits tests Should be rendered if in development 2`] = `
+<a
+  href="https://github.com/users/RipDevil/projects/1"
+  title="Projects in github"
+>
+  /fuq
+</a>
+`;
+
+exports[`Credits tests Should be rendered if in development 3`] = `
+<a
+  href="https://github.com/RipDevil/client-FUQs"
+  title="Client repo in github"
+>
+  /cli
+</a>
+`;
+
+exports[`Credits tests Should be rendered if in development 4`] = `
+<a
+  href="https://ripdevil.github.io/#/"
+  title="Github pages"
+>
+  WebInstance
+</a>
+`;

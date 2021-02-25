@@ -25,7 +25,7 @@ const client = new QueryClient({
 ReactDOM.render(
   <QueryClientProvider client={client}>
     <ConfigWrapper>
-      <Credits />
+      <Credits env={process.env.NODE_ENV} />
       <App />
       <ReactQueryDevtools />
     </ConfigWrapper>
