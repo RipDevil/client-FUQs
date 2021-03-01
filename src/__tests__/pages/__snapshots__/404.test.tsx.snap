@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`404 should be rendered 1`] = `
+.c0 {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+<div>
+  <div
+    class="ant-row ant-row-center ant-row-middle c0"
+  >
+    <b>
+      /404
+    </b>
+  </div>
+</div>
+`;
