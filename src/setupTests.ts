@@ -13,3 +13,8 @@ global.matchMedia =
       removeListener: jest.fn(),
     };
   };
+
+global.console = {
+  ...global.console,
+  error: jest.fn(),
+};
