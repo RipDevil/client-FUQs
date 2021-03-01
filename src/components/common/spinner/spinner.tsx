@@ -10,10 +10,7 @@ export interface SpinnerProps {
   transparent?: boolean;
 }
 
-export const Spinner: React.FC<SpinnerProps> = ({
-  text = '',
-  transparent = false, // TODO: implement this stuff
-}) => {
+export const Spinner: React.FC<SpinnerProps> = ({ text = '', transparent = false }) => {
   return (
     <>
       <BackgroundDiv transparent={transparent} />
@@ -21,7 +18,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
         <div>
           <i className="fas fa-10x fa-spin fa-cog" />
         </div>
-        {text && (
+        {text.length && (
           <TextDiv>
             <Title level={3} type="danger">
               {text}
