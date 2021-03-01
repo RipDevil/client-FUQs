@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Credits tests Should be rendered if in development 1`] = `
+.c0 {
+  position: fixed;
+  top: 0;
+  left: 10;
+  z-index: 1001;
+  overflow: hidden;
+  font-size: 10px;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+.c0:hover {
+  font-size: 12px;
+  bacground-color: lightyellow;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <span>
+      <a
+        href="https://github.com/RipDevil"
+        title="RipDevil github page"
+      >
+        Github
+      </a>
+      <a
+        href="https://github.com/users/RipDevil/projects/1"
+        title="Projects in github"
+      >
+        /fuq
+      </a>
+      <a
+        href="https://github.com/RipDevil/client-FUQs"
+        title="Client repo in github"
+      >
+        /cli
+      </a>
+    </span>
+    <br />
+    <span>
+      <a
+        href="https://ripdevil.github.io/#/"
+        title="Github pages"
+      >
+        WebInstance
+      </a>
+    </span>
+  </div>
+</div>
+`;

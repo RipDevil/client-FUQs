@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout tests Should render children if presented Node 1`] = `
+.c0 {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+<div>
+  <div
+    class="ant-row ant-row-center ant-row-middle c0"
+  >
+    <span
+      data-testid="test"
+    >
+      Text 
+      <span>
+        Another test
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Layout tests Should render children if presented Text 1`] = `
+.c0 {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+<div>
+  <div
+    class="ant-row ant-row-center ant-row-middle c0"
+  >
+    Test
+  </div>
+</div>
+`;
+
+exports[`Layout tests Should render null if no children presented 1`] = `
+.c0 {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+<div>
+  <div
+    class="ant-row ant-row-center ant-row-middle c0"
+  />
+</div>
+`;

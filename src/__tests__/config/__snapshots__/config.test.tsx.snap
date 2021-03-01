@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Config wrapper tests Should render child elements 1`] = `
+.c1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  margin: -50px 0px 0px -50px;
+  max-width: 140px;
+}
+
+.c0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(253,253,253,1);
+}
+
+.c2 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+<body>
+  <div>
+    <div
+      class="c0"
+    />
+    <div
+      class="c1"
+    >
+      <div>
+        <i
+          class="fas fa-10x fa-spin fa-cog"
+        />
+      </div>
+      <div
+        class="c2"
+      >
+        <h3
+          class="ant-typography ant-typography-danger"
+        >
+          Loading config
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Config wrapper tests Should render child elements 2`] = `
+<body>
+  <div>
+    <div>
+      test
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Config wrapper tests Should render nothing on get config error 1`] = `
+<body>
+  <div />
+</body>
+`;

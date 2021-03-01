@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FuqCard should be rendered 1`] = `
+.c0 {
+  font-size: 50px !important;
+}
+
+<div>
+  <div
+    class="ant-col"
+    title="Some text"
+  >
+    <div
+      class="ant-row ant-row-center"
+    >
+      <h1
+        class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-ellipsis-single-line c0"
+      >
+        Some title
+      </h1>
+    </div>
+    <div
+      class="ant-row ant-row-center"
+    >
+      <h3
+        class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line"
+      >
+        Some text
+      </h3>
+    </div>
+  </div>
+</div>
+`;

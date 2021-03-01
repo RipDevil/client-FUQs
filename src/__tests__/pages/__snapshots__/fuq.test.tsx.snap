@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Config wrapper tests Should render FUQ 1`] = `
+<body>
+  .c0 {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+.c1 {
+  font-size: 50px !important;
+}
+
+<div>
+    <div
+      class="ant-row ant-row-center ant-row-middle c0"
+    >
+      <div
+        class="ant-col"
+        title="string"
+      >
+        <div
+          class="ant-row ant-row-center"
+        >
+          <h1
+            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-ellipsis-single-line c1"
+          >
+            string
+          </h1>
+        </div>
+        <div
+          class="ant-row ant-row-center"
+        >
+          <h3
+            class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line"
+          >
+            string
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Config wrapper tests Should render FUQ with params 1`] = `
+<body>
+  .c0 {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+.c1 {
+  font-size: 50px !important;
+}
+
+<div>
+    <div
+      class="ant-row ant-row-center ant-row-middle c0"
+    >
+      <div
+        class="ant-col"
+        title="string"
+      >
+        <div
+          class="ant-row ant-row-center"
+        >
+          <h1
+            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-ellipsis-single-line c1"
+          >
+            string
+          </h1>
+        </div>
+        <div
+          class="ant-row ant-row-center"
+        >
+          <h3
+            class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line"
+          >
+            string
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Config wrapper tests Should render error 1`] = `
+<body>
+  .c0 {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+.c1 {
+  font-size: 50px !important;
+}
+
+<div>
+    <div
+      class="ant-row ant-row-center ant-row-middle c0"
+    >
+      <div
+        class="ant-col"
+        title="Request failed with status code 404"
+      >
+        <div
+          class="ant-row ant-row-center"
+        >
+          <h1
+            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-ellipsis-single-line c1"
+          >
+            Error
+          </h1>
+        </div>
+        <div
+          class="ant-row ant-row-center"
+        >
+          <h3
+            class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line"
+          >
+            Request failed with status code 404
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Config wrapper tests Should render loader 1`] = `
+.c0 {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+.c2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  margin: -50px 0px 0px -50px;
+  max-width: 140px;
+}
+
+.c1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(253,253,253,1);
+}
+
+.c3 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+<body>
+  <div>
+    <div
+      class="ant-row ant-row-center ant-row-middle c0"
+    >
+      <div
+        class="c1"
+      />
+      <div
+        class="c2"
+      >
+        <div>
+          <i
+            class="fas fa-10x fa-spin fa-cog"
+          />
+        </div>
+        <div
+          class="c3"
+        >
+          <h3
+            class="ant-typography ant-typography-danger"
+          >
+            Loading a FUQ
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
