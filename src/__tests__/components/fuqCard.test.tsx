@@ -6,7 +6,8 @@ test('FuqCard should be rendered', () => {
   const { getByText, container } = render(<FuqCard title="Some title" text="Some text" />);
   const [elementWithTitle, elementWithText] = [getByText('Some title'), getByText('Some text')];
 
-  expect(container).toMatchSnapshot();
   expect(elementWithTitle).toBeInTheDocument();
   expect(elementWithText).toBeInTheDocument();
+
+  expect(container).toMatchSnapshot();
 });
