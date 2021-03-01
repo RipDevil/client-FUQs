@@ -6,14 +6,14 @@ import { Layout } from 'templates';
 describe('Layout tests', () => {
   describe('Should render children if presented', () => {
     it('Text', () => {
-      const { getByText } = render(<Layout>Test</Layout>);
+      const { getByText, container } = render(<Layout>Test</Layout>);
       const testedElement = getByText(/Test/i);
       expect(testedElement).toBeInTheDocument();
-      expect(testedElement).toMatchSnapshot();
+      expect(container).toMatchSnapshot();
     });
 
     it('Node', () => {
-      const { getByTestId } = render(
+      const { getByTestId, container } = render(
         <Layout>
           <span data-testid="test">
             Text <span>Another test</span>
@@ -22,7 +22,7 @@ describe('Layout tests', () => {
       );
       const testedElement = getByTestId('test');
       expect(testedElement).toBeInTheDocument();
-      expect(testedElement).toMatchSnapshot();
+      expect(container).toMatchSnapshot();
     });
   });
 
@@ -30,6 +30,6 @@ describe('Layout tests', () => {
     const { container } = render(<Layout></Layout>);
     const testedElement = container.querySelector('.ant-row');
     expect(testedElement).toBeEmpty();
-    expect(testedElement).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
