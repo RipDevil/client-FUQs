@@ -32,7 +32,7 @@ describe('Config wrapper tests', () => {
   it('Should render loader', async () => {
     mockAxios.onGet('/fuq').reply(200, {});
 
-    const { getByText, getAllByText } = render(
+    const { getByText } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/'] })}>
           <Route path={'/'} component={FuqPage} />
@@ -56,7 +56,7 @@ describe('Config wrapper tests', () => {
       crdate: 'string',
     });
 
-    const { getByText, getAllByText } = render(
+    const { getAllByText } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/'] })}>
           <Route path={'/'} component={FuqPage} />
@@ -82,7 +82,7 @@ describe('Config wrapper tests', () => {
       crdate: 'string',
     });
 
-    const { getByText, getAllByText } = render(
+    const { getAllByText } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/fuq/13'] })}>
           <Route path={'/fuq/:id'} component={FuqPage} />
