@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { QueryClientProvider, QueryClient } from 'react-query';
-import { ReactQueryDevtools } from 'react-query-devtools';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'antd/dist/antd.css';
@@ -25,7 +25,7 @@ ReactDOM.render(
     <ConfigWrapper>
       <Credits env={process.env.NODE_ENV} />
       <App />
-      <ReactQueryDevtools />
+      <ReactQueryDevtools initialIsOpen={false} />
     </ConfigWrapper>
   </QueryClientProvider>,
   document.getElementById('root'),
