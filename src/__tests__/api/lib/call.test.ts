@@ -25,13 +25,15 @@ describe('Api call test', () => {
   it('On any success', async () => {
     mockAxios.onAny(FAKE_API).reply(200, FAKE_RES);
 
-    const [res, resWithParam] = [
+    const results = [
       await call<FAKE_RES_TYPE>(FAKE_API, 'GET'),
       await call<FAKE_RES_TYPE>(FAKE_API, 'GET', { param: '1' }),
+      await call<FAKE_RES_TYPE>(FAKE_API, 'GET', { param: '1' }, 'TOKEN_SAMPLE'),
     ];
 
-    expect(res).toMatchObject(FAKE_RES);
-    expect(resWithParam).toMatchObject(resWithParam);
+    results.forEach((result) => {
+      expect(result).toMatchObject(FAKE_RES);
+    });
   });
 
   it('On any error', async () => {
