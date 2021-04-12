@@ -17,4 +17,5 @@ global.matchMedia =
 global.console = {
   ...global.console,
   error: jest.fn(),
+  warn: jest.fn(),
 };
