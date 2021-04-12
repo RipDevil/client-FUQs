@@ -10,6 +10,17 @@ export interface ConfigType {
       post?: string;
       delete?: string;
     };
+    users?: {
+      get?: string;
+      put?: string;
+      post?: string;
+      delete?: string;
+    };
+    auth?: {
+      login?: string;
+      refresh?: string;
+      logout?: string;
+    };
   };
 }
 

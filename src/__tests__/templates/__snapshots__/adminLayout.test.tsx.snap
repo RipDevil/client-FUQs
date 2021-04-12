@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AdminLayout tests Should render children if presented Node 1`] = `
+.c0 {
+  color: initial;
+}
+
 <div>
   <div
-    class="ant-row"
+    class="ant-row c0 admin__layout"
   >
     <span
       data-testid="test"
@@ -18,9 +22,13 @@ exports[`AdminLayout tests Should render children if presented Node 1`] = `
 `;
 
 exports[`AdminLayout tests Should render children if presented Text 1`] = `
+.c0 {
+  color: initial;
+}
+
 <div>
   <div
-    class="ant-row"
+    class="ant-row c0 admin__layout"
   >
     Test
   </div>
@@ -28,9 +36,13 @@ exports[`AdminLayout tests Should render children if presented Text 1`] = `
 `;
 
 exports[`AdminLayout tests Should render null if no children presented 1`] = `
+.c0 {
+  color: initial;
+}
+
 <div>
   <div
-    class="ant-row"
+    class="ant-row c0 admin__layout"
   />
 </div>
 `;

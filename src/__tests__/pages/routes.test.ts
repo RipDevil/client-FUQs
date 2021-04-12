@@ -1,7 +1,7 @@
 import { routes } from 'pages';
 
-const ROUTES_COUNT = 4;
-const LISTED_ROUTES = ['/', '/fuq/:id', '/badmin'];
+const ROUTES_COUNT = 5;
+const LISTED_ROUTES = ['/', '/fuq/:id', '/badmin', '/login'];
 
 test('Get a proper list of routes', () => {
   const result = routes();
