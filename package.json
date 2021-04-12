@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "antd": "^4.12.3",
+    "antd": "^4.15.1",
     "axios": "^0.21.1",
     "effector": "^21.8.3",
     "effector-react": "^21.2.1",
