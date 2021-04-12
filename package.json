@@ -10,7 +10,7 @@
     "effector-react": "^21.3.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-intl": "^5.12.3",
+    "react-intl": "^5.15.8",
     "react-query": "^3.9.8",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
