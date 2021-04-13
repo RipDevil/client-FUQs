@@ -26,14 +26,6 @@ beforeAll(() => {
 
   configUpdate({
     server: 'test',
-    api: {
-      fuq: {
-        get: '/fuq',
-        put: '/fuq',
-        post: '/fuq/:id',
-        delete: '/fuq/:id',
-      },
-    },
   });
 });
 

@@ -9,14 +9,11 @@ import { call } from './lib';
  * Perform logout
  */
 export const useLogout = () => {
-  const {
-    api: { auth },
-    server,
-  } = $config.getState();
+  const { server } = $config.getState();
 
   const { token } = $auth.getState();
 
   return useMutation<any, AxiosError, unknown, any>('Logout', (): any =>
-    call(`${server}${auth?.logout}`, 'POST', undefined, token),
+    call(`${server}/auth/logout`, 'POST', undefined, token),
   );
 };

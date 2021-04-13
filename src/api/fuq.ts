@@ -10,12 +10,9 @@ import { FuqType } from 'pages/fuq/model';
  * @param id - id of a FUQ
  */
 export const useSingleFuq = (id?: string) => {
-  const {
-    api: { fuq },
-    server,
-  } = $config.getState();
+  const { server } = $config.getState();
 
   return useQuery<unknown, AxiosError, FuqType>(`Get ${id ? 'random' : 'single'} FUQ`, () =>
-    call(`${server}${fuq?.get}${id ? '/' + id : ''}`, 'GET'),
+    call(`${server}/fuq${id ? '/' + id : ''}`, 'GET'),
   );
 };

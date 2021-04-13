@@ -3,25 +3,6 @@ import defaultConfig from './defaultConfig';
 
 export interface ConfigType {
   server: string;
-  api: {
-    fuq?: {
-      get?: string;
-      put?: string;
-      post?: string;
-      delete?: string;
-    };
-    users?: {
-      get?: string;
-      put?: string;
-      post?: string;
-      delete?: string;
-    };
-    auth?: {
-      login?: string;
-      refresh?: string;
-      logout?: string;
-    };
-  };
 }
 
 const $config = createStore<ConfigType>(defaultConfig);

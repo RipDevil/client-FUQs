@@ -15,12 +15,9 @@ interface CredentialsType {
  * @param credentials - { login, password }
  */
 export const useLogin = () => {
-  const {
-    api: { auth },
-    server,
-  } = $config.getState();
+  const { server } = $config.getState();
 
   return useMutation<AuthType, AxiosError, CredentialsType, AuthType>('Login', (credentials) =>
-    call(`${server}${auth?.login}`, 'POST', credentials),
+    call(`${server}/auth/login`, 'POST', credentials),
   );
 };

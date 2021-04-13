@@ -26,13 +26,6 @@ beforeAll(() => {
 
   configUpdate({
     server: 'test',
-    api: {
-      auth: {
-        login: '/auth/login',
-        refresh: '/auth/refresh',
-        logout: '/auth/logout',
-      },
-    },
   });
 });
 
