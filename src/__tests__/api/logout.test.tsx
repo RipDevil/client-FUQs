@@ -4,9 +4,11 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-import { authUpdate, authReset, $auth } from 'pages/login/model';
+import { authUpdate, authReset } from 'pages/login/model';
 import { configUpdate } from 'config/model';
 import { useLogout } from 'api';
+
+const FAKE_CREDENTIALS = { refreshToken: 'FAKE_REFRESH_TOKEN', token: 'FAKE_TOKEN' };
 
 let queryClient: any;
 let wrapper: React.FC;
@@ -43,8 +45,19 @@ afterEach(() => {
 
 describe('Use logout hook test', () => {
   it('On 200 with param', async () => {
-    authUpdate({ refreshToken: 'FAKE_REFRESH_TOKEN', token: 'FAKE_TOKEN' });
-    mockAxios.onPost('test/auth/logout').reply(200);
+    authUpdate(FAKE_CREDENTIALS);
+    mockAxios
+      .onPost(
+        'test/auth/logout',
+        undefined,
+        expect.objectContaining({
+          Authorization: expect.stringMatching(/^Bearer /),
+        }),
+      )
+      .reply(200)
+      .onAny('test/auth/logout')
+      .reply(401);
+
     const { result, waitFor, unmount } = renderHook(() => useLogout(), { wrapper });
 
     await act(async () => {

@@ -6,7 +6,10 @@ import MockAdapter from 'axios-mock-adapter';
 
 import { UserType } from 'pages/admin/model';
 import { configUpdate } from 'config/model';
+import { authUpdate, authReset } from 'pages/login/model';
 import { useUsers } from 'api';
+
+const FAKE_CREDENTIALS = { refreshToken: 'FAKE_REFRESH_TOKEN', token: 'FAKE_TOKEN' };
 
 let queryClient: any;
 let wrapper: React.FC;
@@ -39,6 +42,7 @@ beforeAll(() => {
 
 afterEach(() => {
   mockAxios.reset();
+  authReset();
 });
 
 describe('Use users hook test', () => {
@@ -60,7 +64,18 @@ describe('Use users hook test', () => {
   ];
 
   it('Should return 200 on get users', async () => {
-    mockAxios.onGet('/test/users').reply(200, res);
+    authUpdate(FAKE_CREDENTIALS);
+    mockAxios
+      .onGet(
+        '/test/users',
+        undefined,
+        expect.objectContaining({
+          Authorization: expect.stringMatching(/^Bearer /),
+        }),
+      )
+      .reply(200, res)
+      .onAny('test/users')
+      .reply(401);
 
     await act(async () => {
       const { result, waitFor, unmount } = renderHook(() => useUsers(), { wrapper });
