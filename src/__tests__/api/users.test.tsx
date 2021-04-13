@@ -4,9 +4,10 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-import { authUpdate, authReset } from 'pages/login/model';
+import { UserType } from 'pages/admin/model';
 import { configUpdate } from 'config/model';
-import { useLogout } from 'api';
+import { authUpdate, authReset } from 'pages/login/model';
+import { useUsers } from 'api';
 
 const FAKE_CREDENTIALS = { refreshToken: 'FAKE_REFRESH_TOKEN', token: 'FAKE_TOKEN' };
 
@@ -29,10 +30,11 @@ beforeAll(() => {
   configUpdate({
     server: 'test',
     api: {
-      auth: {
-        login: '/auth/login',
-        refresh: '/auth/refresh',
-        logout: '/auth/logout',
+      users: {
+        get: '/users',
+        put: '/users',
+        post: '/users/:id',
+        delete: '/users/:id',
       },
     },
   });
@@ -43,46 +45,60 @@ afterEach(() => {
   authReset();
 });
 
-describe('Use logout hook test', () => {
-  it('On 200 with param', async () => {
+describe('Use users hook test', () => {
+  const res: UserType[] = [
+    {
+      login: 'FAKE_LOGIN',
+      fuqs: [],
+      password: 'FAKE_PASS',
+      deleted: false,
+    },
+    {
+      login: 'FAKE_LOGIN_2',
+      fuqs: [],
+      password: 'FAKE_PASS+2',
+      deleted: false,
+    },
+  ];
+
+  it('Should return 200 on get users', async () => {
     authUpdate(FAKE_CREDENTIALS);
     mockAxios
-      .onPost(
-        'test/auth/logout',
+      .onGet(
+        '/test/users',
         undefined,
         expect.objectContaining({
           Authorization: expect.stringMatching(/^Bearer /),
         }),
       )
-      .reply(200)
-      .onAny('test/auth/logout')
+      .reply(200, res)
+      .onAny('test/users')
       .reply(401);
 
-    const { result, waitFor, unmount } = renderHook(() => useLogout(), { wrapper });
-
     await act(async () => {
-      result.current.mutate(new MouseEvent('click'));
+      const { result, waitFor, unmount } = renderHook(() => useUsers(), { wrapper });
 
       await waitFor(() => {
         return result.current.isSuccess;
       });
 
+      expect(result.current.data).not.toBeUndefined();
+      expect(result.current.error).toBeNull();
       unmount();
     });
   });
 
-  it('On any error', async () => {
-    authUpdate({ refreshToken: 'FAKE_REFRESH_TOKEN', token: 'FAKE_TOKEN' });
-    mockAxios.onPost('test/auth/logout').reply(404);
-    const { result, waitFor, unmount } = renderHook(() => useLogout(), { wrapper });
+  it('On error', async () => {
+    mockAxios.onGet('/test/users').reply(404);
 
     await act(async () => {
-      result.current.mutate(new MouseEvent('click'));
+      const { result, waitFor, unmount } = renderHook(() => useUsers(), { wrapper });
 
       await waitFor(() => {
         return result.current.isError;
       });
 
+      expect(result.current.error).not.toBeNull();
       unmount();
     });
   });
