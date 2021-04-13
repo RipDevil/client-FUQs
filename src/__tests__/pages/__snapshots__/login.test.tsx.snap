@@ -33,7 +33,7 @@ exports[`Login page tests Page should be rendered if user has not authenticated 
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-affix-wrapper-lg"
+                  class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-affix-wrapper-lg"
                 >
                   <span
                     class="ant-input-prefix"

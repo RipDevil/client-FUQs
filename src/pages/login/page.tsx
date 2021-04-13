@@ -18,6 +18,8 @@ type FormTypes = {
 };
 
 const Login: React.FC = () => {
+  const loginInputRef = React.createRef<Input>();
+
   const history = useHistory<H.History>();
   const authStore = useStore($auth);
   const { mutate: login, isError, isSuccess, data, isLoading, error } = useLogin();
@@ -27,6 +29,10 @@ const Login: React.FC = () => {
       history.push('/badmin');
     }
   });
+
+  React.useEffect(() => {
+    loginInputRef && loginInputRef.current?.focus();
+  }, [loginInputRef]);
 
   React.useEffect(() => {
     if (!isError && isSuccess && data) {
@@ -66,6 +72,7 @@ const Login: React.FC = () => {
         >
           <Form.Item name="login" rules={loginRules}>
             <Input
+              ref={loginInputRef}
               data-testid="login-input"
               maxLength={31}
               prefix={<UserOutlined className="site-form-item-icon" />}
