@@ -49,14 +49,12 @@ describe('Use users hook test', () => {
   const res: UserType[] = [
     {
       login: 'FAKE_LOGIN',
-      _crdate: '25.06.95',
       fuqs: [],
       password: 'FAKE_PASS',
       deleted: false,
     },
     {
       login: 'FAKE_LOGIN_2',
-      _crdate: '25.06.95',
       fuqs: [],
       password: 'FAKE_PASS+2',
       deleted: false,
