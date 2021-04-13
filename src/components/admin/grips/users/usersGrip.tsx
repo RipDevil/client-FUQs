@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Row, PageHeader, Space, Button, Table } from 'antd';
 
+import { useUsers } from 'api';
+
 export interface UsersGripProps {}
 
 export const UsersGrip: React.FC<UsersGripProps> = () => {
-  // useQuery ~> get users
+  const { data: users, isSuccess, isLoading, isError } = useUsers();
 
   const actions = {
     delete: () => {
@@ -19,14 +21,19 @@ export const UsersGrip: React.FC<UsersGripProps> = () => {
       key: 'login',
     },
     {
-      title: 'Creation date',
-      dataIndex: 'crdate',
-      key: 'crdate',
+      title: 'FUQs count',
+      dataIndex: 'fuqs',
+      key: 'fuqs',
+    },
+    {
+      title: 'Deleted',
+      dataIndex: 'deleted',
+      key: 'deleted',
     },
     {
       title: 'Actions',
       key: 'actions',
-      render: (text: any, record: any) =>
+      render: (_: any, record: any) =>
         record.login !== 'RipDevil' ? (
           <Space>
             <Button onClick={actions.delete} type="link" block>
@@ -39,19 +46,24 @@ export const UsersGrip: React.FC<UsersGripProps> = () => {
     },
   ];
 
-  const mockData = [
-    {
-      key: 1,
-      login: 'RipDevil',
-      crdate: 'idk lol',
-    },
-  ];
-
   return (
     <>
       <PageHeader backIcon={null} title="Users" subTitle="controll your users, champ!" />
       <Row>
-        <Table style={{ width: '100%' }} columns={cols} dataSource={mockData} />
+        {isLoading && <p>Loading...</p>}
+        {isError && <p style={{ color: 'red' }}>Error!</p>}
+        {isSuccess && (
+          <Table
+            style={{ width: '100%' }}
+            columns={cols}
+            dataSource={users?.map((user, index) => ({
+              key: `user.${index}`,
+              fuqs: user.fuqs.length,
+              deleted: user.deleted ? 'YES' : 'NO',
+              login: user.login,
+            }))}
+          />
+        )}
       </Row>
     </>
   );

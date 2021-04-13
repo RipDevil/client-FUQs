@@ -1,11 +1,10 @@
-import * as React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { render, waitForElement, cleanup, fireEvent } from '@testing-library/react';
+import { render, waitForElement, waitFor, cleanup, fireEvent } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { authUpdate, $auth } from 'pages/login/model';
+import { authUpdate, authReset } from 'pages/login/model';
 
 import Admin from 'pages/admin/page';
 import SingleFuq from 'pages/fuq/page';
@@ -32,7 +31,7 @@ beforeAll(() => {
 
 afterEach(() => {
   mockAxios.reset();
-  $auth.reset();
+  authReset();
   cleanup();
 });
 
@@ -49,15 +48,20 @@ describe('Admin page tests', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Admin page should be rendered because', () => {
+  it('Admin page should be rendered with sub elements', async () => {
     authUpdate(FAKE_CREDENTIALS);
-    const { container } = render(
+
+    mockAxios.onGet('/users').reply(200, []);
+
+    const { container, getByText } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/badmin'] })}>
           <Route path={'/badmin'} component={Admin} />
         </Router>
       </QueryClientProvider>,
     );
+
+    await waitFor(() => getByText('Actions'));
 
     expect(container).toMatchSnapshot();
   });

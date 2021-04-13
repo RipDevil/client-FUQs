@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FuqGrip should be rendered 1`] = `
+exports[`UsersGrip tests FuqGrip should be rendered with users 1`] = `
 <div>
   <div
     class="ant-page-header ant-page-header-ghost"
@@ -64,7 +64,12 @@ exports[`FuqGrip should be rendered 1`] = `
                       <th
                         class="ant-table-cell"
                       >
-                        Creation date
+                        FUQs count
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                      >
+                        Deleted
                       </th>
                       <th
                         class="ant-table-cell"
@@ -78,26 +83,82 @@ exports[`FuqGrip should be rendered 1`] = `
                   >
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="1"
+                      data-row-key="user.0"
                     >
                       <td
                         class="ant-table-cell"
                       >
-                        RipDevil
+                        FAKE_LOGIN
                       </td>
                       <td
                         class="ant-table-cell"
                       >
-                        idk lol
+                        0
                       </td>
                       <td
                         class="ant-table-cell"
                       >
-                        <b
-                          title="This is a superuser. You have no rights deleting 'em"
+                        NO
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
-                          HOW DARE YOU!?
-                        </b>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn ant-btn-link ant-btn-block"
+                              type="button"
+                            >
+                              <span>
+                                Delete
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="user.1"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        FAKE_LOGIN_2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        NO
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn ant-btn-link ant-btn-block"
+                              type="button"
+                            >
+                              <span>
+                                Delete
+                              </span>
+                            </button>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
@@ -188,6 +249,80 @@ exports[`FuqGrip should be rendered 1`] = `
         </div>
       </div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`UsersGrip tests FuqGrip should render Error 1`] = `
+<div>
+  <div
+    class="ant-page-header ant-page-header-ghost"
+  >
+    <div
+      class="ant-page-header-heading"
+    >
+      <div
+        class="ant-page-header-heading-left"
+      >
+        <span
+          class="ant-page-header-heading-title"
+          title="Users"
+        >
+          Users
+        </span>
+        <span
+          class="ant-page-header-heading-sub-title"
+          title="controll your users, champ!"
+        >
+          controll your users, champ!
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ant-row"
+  >
+    <p
+      style="color: red;"
+    >
+      Error!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`UsersGrip tests FuqGrip should render Loading 1`] = `
+<div>
+  <div
+    class="ant-page-header ant-page-header-ghost"
+  >
+    <div
+      class="ant-page-header-heading"
+    >
+      <div
+        class="ant-page-header-heading-left"
+      >
+        <span
+          class="ant-page-header-heading-title"
+          title="Users"
+        >
+          Users
+        </span>
+        <span
+          class="ant-page-header-heading-sub-title"
+          title="controll your users, champ!"
+        >
+          controll your users, champ!
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ant-row"
+  >
+    <p>
+      Loading...
+    </p>
   </div>
 </div>
 `;
