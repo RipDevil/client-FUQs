@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { render, waitFor, cleanup, fireEvent, screen } from '@testing-library/react';
+import { render, waitFor, cleanup } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 

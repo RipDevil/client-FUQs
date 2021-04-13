@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { render, waitForElement, waitFor, cleanup, fireEvent } from '@testing-library/react';
+import { render, waitFor, cleanup, fireEvent } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { authUpdate, authReset } from 'pages/login/model';
@@ -91,7 +91,7 @@ describe('Admin page tests', () => {
       crdate: 'string',
     });
 
-    await waitForElement(() => {
+    await waitFor(() => {
       const fuqTitle = getAllByText('string');
       return fuqTitle.length === 2;
     });
@@ -113,7 +113,7 @@ describe('Admin page tests', () => {
     const itemButton = getByTestId('1');
     fireEvent.click(itemButton);
 
-    await waitForElement(() => {
+    await waitFor(() => {
       const fuqsGripTitle = getByTitle('FUQs');
       return fuqsGripTitle;
     });

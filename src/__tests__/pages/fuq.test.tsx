@@ -1,8 +1,7 @@
-import * as React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { render, waitForElement, cleanup } from '@testing-library/react';
+import { render, waitFor, cleanup } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -64,7 +63,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElements = await waitForElement(() => getAllByText('string'));
+    const resolvedElements = await waitFor(() => getAllByText('string'));
     resolvedElements.forEach((item) => {
       expect(item).toBeInTheDocument();
     });
@@ -90,7 +89,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElements = await waitForElement(() => getAllByText('string'));
+    const resolvedElements = await waitFor(() => getAllByText('string'));
     resolvedElements.forEach((item) => {
       expect(item).toBeInTheDocument();
     });
@@ -108,7 +107,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElement = await waitForElement(() => getByText('Error'));
+    const resolvedElement = await waitFor(() => getByText('Error'));
     expect(resolvedElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
   });

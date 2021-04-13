@@ -1,8 +1,7 @@
-import * as React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { render, waitForElement, cleanup, fireEvent, screen } from '@testing-library/react';
+import { render, waitFor, cleanup, fireEvent, screen } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { authUpdate, authReset } from 'pages/login/model';
@@ -49,7 +48,7 @@ describe('Login page tests', () => {
     );
 
     // wait until a user is redirected to a page where you can find such element
-    await waitForElement(() => {
+    await waitFor(() => {
       const buttonOnBadminPage = getByTestId('0');
       return buttonOnBadminPage;
     });
@@ -86,7 +85,7 @@ describe('Login page tests', () => {
       const loginInput = getByTestId('login-input');
       fireEvent.change(loginInput, { target: { value: 'q' } });
 
-      await waitForElement(() => {
+      await waitFor(() => {
         const fuqTitle = getByText('Login must be more than 3 symbols');
         return fuqTitle;
       });
@@ -106,7 +105,7 @@ describe('Login page tests', () => {
       const passInput = getByTestId('password-input');
       fireEvent.change(passInput, { target: { value: 'q' } });
 
-      await waitForElement(() => {
+      await waitFor(() => {
         const fuqTitle = getByText('Password must be more than 3 symbols');
         return fuqTitle;
       });
@@ -132,7 +131,7 @@ describe('Login page tests', () => {
       const loginInput = getByTestId('login-input');
       fireEvent.change(loginInput, { target: { value: 'TEST' } });
 
-      await waitForElement(() => {
+      await waitFor(() => {
         const _loginInput = getByTestId('login-input');
         return _loginInput.getAttribute('value') === 'TEST';
       });
@@ -141,7 +140,7 @@ describe('Login page tests', () => {
       const passInput = getByTestId('password-input');
       fireEvent.change(passInput, { target: { value: 'TEST_PASSWORD' } });
 
-      await waitForElement(() => {
+      await waitFor(() => {
         const _passInput = getByTestId('password-input');
         return _passInput.getAttribute('value') === 'TEST_PASSWORD';
       });
@@ -151,7 +150,7 @@ describe('Login page tests', () => {
       fireEvent.click(loginButton);
 
       // wait until a user is redirected to a page where you can find such element
-      await waitForElement(() => {
+      await waitFor(() => {
         const buttonOnBadminPage = getByTestId('0');
         return buttonOnBadminPage;
       });

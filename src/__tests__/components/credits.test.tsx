@@ -1,5 +1,3 @@
-/* eslint-disable */
-import React from 'react';
 import { render } from '@testing-library/react';
 import { Credits } from 'components/common';
 

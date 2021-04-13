@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { render, waitForElement, cleanup } from '@testing-library/react';
+import { render, waitFor, cleanup } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -42,7 +41,7 @@ describe('Config wrapper tests', () => {
     expect(loadingElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
 
-    const resolvedElement = await waitForElement(() => getByText('test'));
+    const resolvedElement = await waitFor(() => getByText('test'));
     expect(resolvedElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
   });
@@ -56,7 +55,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    await waitForElement(() => document.body.querySelector('div')?.innerHTML === '');
+    await waitFor(() => document.body.querySelector('div')?.innerHTML === '');
     expect(document.body).toMatchSnapshot();
   });
 });
