@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  fuq-frontend:
+    container_name: fuq-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '1337:80'
