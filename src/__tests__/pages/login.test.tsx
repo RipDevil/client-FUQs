@@ -58,7 +58,7 @@ describe('Login page tests', () => {
   });
 
   it('Page should be rendered if user has not authenticated', async () => {
-    const { container } = render(
+    const { container, getByTestId } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/login'] })}>
           <Route path={'/login'} component={Login} />
@@ -67,6 +67,10 @@ describe('Login page tests', () => {
     );
 
     expect(container).toMatchSnapshot();
+
+    // The input has to be focused
+    const loginInput = getByTestId('login-input');
+    expect(loginInput).toHaveFocus();
   });
 
   describe('Login form', () => {
