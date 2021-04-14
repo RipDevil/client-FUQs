@@ -34,7 +34,7 @@ export const UsersGrip: React.FC<UsersGripProps> = () => {
       title: 'Actions',
       key: 'actions',
       render: (_: any, record: any) =>
-        record.login !== 'RipDevil' ? (
+        record.login !== 'admin' ? (
           <Space>
             <Button onClick={actions.delete} type="link" block>
               Delete
