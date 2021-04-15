@@ -16,8 +16,7 @@ This project is about hate messages. Have you got pissed by your BOSS? Or your b
 You will need docker and a keyboard!
 
 1. `git clone` this repo and the [backend](https://github.com/RipDevil/server-FUQs) repo too (*look into it to startup everything*)
-2. Create the `.env`
-3. Execute `docker-compose up -d --build`
+2. Execute `docker-compose up -d --build`
 
 ## Developing
 
