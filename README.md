@@ -8,7 +8,3 @@
 5. `npm start`
 
 Do not forget about `npm test` and showing off with `coverage.png` sometimes!
-
-## Building
-
-See the quote
