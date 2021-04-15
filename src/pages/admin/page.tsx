@@ -1,6 +1,6 @@
 import * as React from 'react';
 import H from 'history';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import { useStore } from 'effector-react';
 import { MenuInfo } from 'rc-menu/lib/interface';
 import { Menu, Col, Button, message } from 'antd';
@@ -36,12 +36,6 @@ const Admin: React.FC = () => {
   const { mutate: logout, isError, isLoading, isSuccess } = useLogout();
 
   React.useEffect(() => {
-    if (authStore.refreshToken === '' || authStore.refreshToken === '') {
-      history.push('/');
-    }
-  });
-
-  React.useEffect(() => {
     isError && message.warning('Can not log off');
   }, [isError]);
 
@@ -53,6 +47,11 @@ const Admin: React.FC = () => {
     const key = reactKey.toString();
     setGrip(items[parseInt(key)].title);
   };
+
+  // @mna: is this the best variant?
+  if (authStore.refreshToken === '' || authStore.refreshToken === '') {
+    return <Redirect to="/login" />;
+  }
 
   return (
     <AdminLayout>
