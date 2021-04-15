@@ -67,13 +67,11 @@ describe('UsersGrip tests', () => {
       {
         login: 'FAKE_LOGIN',
         fuqs: [],
-        password: 'FAKE_PASS',
         deleted: false,
       },
       {
         login: 'FAKE_LOGIN_2',
         fuqs: [],
-        password: 'FAKE_PASS+2',
         deleted: false,
       },
     ];
