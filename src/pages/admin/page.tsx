@@ -1,6 +1,5 @@
 import * as React from 'react';
-import H from 'history';
-import { useHistory, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { useStore } from 'effector-react';
 import { MenuInfo } from 'rc-menu/lib/interface';
 import { Menu, Col, Button, message } from 'antd';
@@ -19,7 +18,6 @@ type ItemType = {
 
 const DEFAULT_GRIP: string = '0';
 const Admin: React.FC = () => {
-  const history = useHistory<H.History>();
   const [grip, setGrip] = React.useState<string>('Users');
   const authStore = useStore($auth);
   const [items] = React.useState<ItemType[]>([
