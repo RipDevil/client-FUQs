@@ -4,7 +4,7 @@ import { Row, Typography, Space, message } from 'antd';
 import { FireOutlined, FireFilled, LikeFilled, LikeOutlined } from '@ant-design/icons';
 
 import { ToggleIcon } from 'components/common/toggleIcon';
-import { StyledTitle, StyledCol } from './fuqCard.styled';
+import { StyledTitle, StyledCol } from './fuq-card.styled';
 const { Title } = Typography;
 
 export interface FuqCardProps {

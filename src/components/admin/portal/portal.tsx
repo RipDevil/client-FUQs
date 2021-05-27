@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { HomeOutlined, LoginOutlined } from '@ant-design/icons';
 
 import { PortalComponent } from './portal.styled';
-import { CustomPortalLink } from './customPortalLink';
+import { CustomPortalLink } from './custom-portal-link';
 
 export const Portal: React.FC = () => {
   const location = useLocation<H.Location>();

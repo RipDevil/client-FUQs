@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Badge } from 'antd';
 
-import { Icon as AntdIconType } from './toggleIcon.types'; // ugly? look inside
+import { Icon as AntdIconType } from './toggle-icon.types'; // ugly? look inside
 
 export interface ToggleIconProps {
   onClick: (value: boolean) => void;

@@ -1,1 +1,1 @@
-export { UsersGrip } from './usersGrip';
+export { UsersGrip } from './users-grip';

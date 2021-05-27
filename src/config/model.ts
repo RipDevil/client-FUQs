@@ -1,5 +1,5 @@
 import { createStore, createEvent } from 'effector';
-import defaultConfig from './defaultConfig';
+import defaultConfig from './default-config';
 
 export interface ConfigType {
   server: string;

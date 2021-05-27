@@ -1,2 +1,2 @@
 export { Layout } from './layout';
-export { AdminLayout } from './adminLayout';
+export { AdminLayout } from './admin-layout';

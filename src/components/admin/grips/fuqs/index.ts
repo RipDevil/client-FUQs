@@ -1,1 +1,1 @@
-export { FuqsGrip } from './fuqsGrip';
+export { FuqsGrip } from './fuqs-grip';
