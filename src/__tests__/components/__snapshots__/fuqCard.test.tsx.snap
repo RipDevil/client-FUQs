@@ -39,7 +39,7 @@ exports[`FuqCard should be rendered 1`] = `
       class="ant-row ant-row-center"
     >
       <h1
-        class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-ellipsis-single-line c1"
+        class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line c1"
         title="Some title"
       >
         Some title

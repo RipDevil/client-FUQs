@@ -205,23 +205,29 @@ exports[`Admin page tests Admin page should be rendered with sub elements 1`] = 
         </span>
       </button>
       <ul
-        class="ant-menu ant-menu-light ant-menu-root ant-menu-inline"
+        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light"
+        data-menu-list="true"
         role="menu"
         style="height: 100%;"
+        tabindex="0"
       >
         <li
-          class="ant-menu-item ant-menu-item-only-child ant-menu-item-selected"
+          class="ant-menu-item ant-menu-item-selected ant-menu-item-only-child"
+          data-menu-id="rc-menu-uuid-test-0"
           data-testid="0"
           role="menuitem"
           style="padding-left: 24px;"
+          tabindex="-1"
         >
           Users
         </li>
         <li
           class="ant-menu-item ant-menu-item-only-child"
+          data-menu-id="rc-menu-uuid-test-1"
           data-testid="1"
           role="menuitem"
           style="padding-left: 24px;"
+          tabindex="-1"
         >
           FUQs
         </li>

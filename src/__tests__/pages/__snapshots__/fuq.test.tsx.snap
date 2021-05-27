@@ -48,7 +48,7 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
           class="ant-row ant-row-center"
         >
           <h1
-            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-ellipsis-single-line c2"
+            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line c2"
             title="string"
           >
             string
@@ -277,7 +277,7 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
           class="ant-row ant-row-center"
         >
           <h1
-            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-ellipsis-single-line c2"
+            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line c2"
             title="string"
           >
             string
@@ -506,7 +506,7 @@ exports[`Config wrapper tests Should render error 1`] = `
           class="ant-row ant-row-center"
         >
           <h1
-            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-ellipsis-single-line c2"
+            class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line c2"
             title="Error"
           >
             Error
