@@ -7,11 +7,7 @@ body {
   background-color: #fdfdfd;
   color: #cc3333;
   padding: 20px;
-}
-
-p {
-  color: #006633;
-}
+};
 
 h1,
 h2,
@@ -20,8 +16,8 @@ h4,
 h5,
 h6 {
   color: #cc3333;
-}
+};
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
+};
