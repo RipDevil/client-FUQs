@@ -1,8 +1,8 @@
-import SingleFuq from './fuq/page';
-import Admin from './admin/page';
-import Login from './login/page';
+import SingleFuq from './fuq';
+import Admin from './admin';
+import Login from './login';
 
-import PageNotFound from './404/page';
+import PageNotFound from './404';
 
 export const routes = () => [
   {

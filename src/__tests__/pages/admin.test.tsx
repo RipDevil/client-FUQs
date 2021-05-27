@@ -6,8 +6,8 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { authUpdate, authReset } from 'pages/login/model';
 
-import Admin from 'pages/admin/page';
-import Login from 'pages/login/page';
+import Admin from 'pages/admin';
+import Login from 'pages/login';
 
 const FAKE_CREDENTIALS = {
   token: 'FAKE_TOKEN',
