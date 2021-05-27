@@ -32,12 +32,10 @@ export function call<RType>(url: string, method: methodTypes, params?: object, t
     };
   }
 
-  return axios(config).then(
-    (res): RType => {
-      logCall(url, method, config, res.data);
-      return res.data;
-    },
-  );
+  return axios(config).then((res): RType => {
+    logCall(url, method, config, res.data);
+    return res.data;
+  });
 }
 
 /**
