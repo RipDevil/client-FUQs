@@ -3,11 +3,29 @@
 exports[`Spinner tests Should be rendered not transparent and without text 1`] = `
 .c1 {
   position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   top: 50%;
   left: 50%;
   z-index: 1000;
   margin: -50px 0px 0px -50px;
-  max-width: 140px;
+  max-width: 200px;
 }
 
 .c0 {
@@ -20,6 +38,12 @@ exports[`Spinner tests Should be rendered not transparent and without text 1`] =
   background-color: rgba(253,253,253,1);
 }
 
+.c2 {
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 60vw;
+}
+
 <div>
   <div
     class="c0"
@@ -32,7 +56,15 @@ exports[`Spinner tests Should be rendered not transparent and without text 1`] =
         class="fas fa-10x fa-spin fa-cog"
       />
     </div>
-    0
+    <div
+      class="c2"
+    >
+      <h3
+        class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+      >
+        
+      </h3>
+    </div>
   </div>
 </div>
 `;
@@ -40,11 +72,29 @@ exports[`Spinner tests Should be rendered not transparent and without text 1`] =
 exports[`Spinner tests Should be rendered transparent 1`] = `
 .c1 {
   position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   top: 50%;
   left: 50%;
   z-index: 1000;
   margin: -50px 0px 0px -50px;
-  max-width: 140px;
+  max-width: 200px;
 }
 
 .c0 {
@@ -57,6 +107,12 @@ exports[`Spinner tests Should be rendered transparent 1`] = `
   background-color: rgba(253,253,253,0.3);
 }
 
+.c2 {
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 60vw;
+}
+
 <div>
   <div
     class="c0"
@@ -69,14 +125,22 @@ exports[`Spinner tests Should be rendered transparent 1`] = `
         class="fas fa-10x fa-spin fa-cog"
       />
     </div>
-    0
+    <div
+      class="c2"
+    >
+      <h3
+        class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+      >
+        
+      </h3>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Spinner tests Should be rendered with text 1`] = `
 <h3
-  class="ant-typography ant-typography-danger"
+  class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
 >
   Some text
 </h3>

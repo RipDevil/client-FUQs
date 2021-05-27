@@ -7,11 +7,16 @@ export interface BackgroundDivProps {
 
 export const SpinnerDiv = styled.div`
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
   top: 50%;
   left: 50%;
   z-index: 1000;
   margin: -50px 0px 0px -50px;
-  max-width: 140px;
+  max-width: 200px;
 `;
 
 export const BackgroundDiv = styled.div`
@@ -28,4 +33,5 @@ export const BackgroundDiv = styled.div`
 export const TextDiv = styled.div`
   text-align: center;
   margin-top: 1rem;
+  max-width: 60vw;
 `;

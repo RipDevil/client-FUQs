@@ -3,11 +3,29 @@
 exports[`Config wrapper tests Should render child elements 1`] = `
 .c1 {
   position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   top: 50%;
   left: 50%;
   z-index: 1000;
   margin: -50px 0px 0px -50px;
-  max-width: 140px;
+  max-width: 200px;
 }
 
 .c0 {
@@ -23,6 +41,7 @@ exports[`Config wrapper tests Should render child elements 1`] = `
 .c2 {
   text-align: center;
   margin-top: 1rem;
+  max-width: 60vw;
 }
 
 <body>
@@ -42,7 +61,7 @@ exports[`Config wrapper tests Should render child elements 1`] = `
         class="c2"
       >
         <h3
-          class="ant-typography ant-typography-danger"
+          class="ant-typography ant-typography-danger ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
         >
           Loading config
         </h3>
