@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { CreditsComponent } from './credits.styled';
 
-interface CreditsTypes {
+export type CreditsTypes = {
   env: string;
-}
+};
 
 export const Credits: React.FC<CreditsTypes> = ({ env }) => {
   return env === 'development' ? (
