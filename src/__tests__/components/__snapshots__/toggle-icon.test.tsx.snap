@@ -1,8 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToggleIcon tests Should be rendered 1`] = `
+.c0 {
+  cursor: pointer;
+}
+
 <div>
   <span
+    class="c0"
     data-testid="icon-span"
   >
     <span>
@@ -35,8 +40,13 @@ exports[`ToggleIcon tests Should be rendered 1`] = `
 `;
 
 exports[`ToggleIcon tests Should be rendered with counter more than 0 1`] = `
+.c0 {
+  cursor: pointer;
+}
+
 <div>
   <span
+    class="c0"
     data-testid="icon-span"
   >
     <span>
@@ -116,8 +126,13 @@ exports[`ToggleIcon tests Should be rendered with counter more than 0 1`] = `
 `;
 
 exports[`ToggleIcon tests Should handle clicks 1`] = `
+.c0 {
+  cursor: pointer;
+}
+
 <div>
   <span
+    class="c0"
     data-testid="icon-span"
   >
     <span>

@@ -7,6 +7,10 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
   text-align: center;
 }
 
+.c3 {
+  cursor: pointer;
+}
+
 .c2 {
   font-size: 50px !important;
 }
@@ -15,6 +19,8 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
   cursor: pointer;
   font-size: 20px;
   overflow-y: hidden;
+  max-width: 90vw;
+  text-align: center;
 }
 
 .c1:hover .ant-space-item {
@@ -75,6 +81,7 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
               style="margin-right: 8px;"
             >
               <span
+                class="c3"
                 data-testid="icon-span"
               >
                 <span>
@@ -155,6 +162,7 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
               class="ant-space-item"
             >
               <span
+                class="c3"
                 data-testid="icon-span"
               >
                 <span>
@@ -236,6 +244,10 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
   text-align: center;
 }
 
+.c3 {
+  cursor: pointer;
+}
+
 .c2 {
   font-size: 50px !important;
 }
@@ -244,6 +256,8 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
   cursor: pointer;
   font-size: 20px;
   overflow-y: hidden;
+  max-width: 90vw;
+  text-align: center;
 }
 
 .c1:hover .ant-space-item {
@@ -304,6 +318,7 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
               style="margin-right: 8px;"
             >
               <span
+                class="c3"
                 data-testid="icon-span"
               >
                 <span>
@@ -384,6 +399,7 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
               class="ant-space-item"
             >
               <span
+                class="c3"
                 data-testid="icon-span"
               >
                 <span>
@@ -465,6 +481,10 @@ exports[`Config wrapper tests Should render error 1`] = `
   text-align: center;
 }
 
+.c3 {
+  cursor: pointer;
+}
+
 .c2 {
   font-size: 50px !important;
 }
@@ -473,6 +493,8 @@ exports[`Config wrapper tests Should render error 1`] = `
   cursor: pointer;
   font-size: 20px;
   overflow-y: hidden;
+  max-width: 90vw;
+  text-align: center;
 }
 
 .c1:hover .ant-space-item {
@@ -533,6 +555,7 @@ exports[`Config wrapper tests Should render error 1`] = `
               style="margin-right: 8px;"
             >
               <span
+                class="c3"
                 data-testid="icon-span"
               >
                 <span>
@@ -613,6 +636,7 @@ exports[`Config wrapper tests Should render error 1`] = `
               class="ant-space-item"
             >
               <span
+                class="c3"
                 data-testid="icon-span"
               >
                 <span>

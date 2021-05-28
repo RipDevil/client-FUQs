@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FuqCard should be rendered 1`] = `
+.c2 {
+  cursor: pointer;
+}
+
 .c1 {
   font-size: 50px !important;
 }
@@ -9,6 +13,8 @@ exports[`FuqCard should be rendered 1`] = `
   cursor: pointer;
   font-size: 20px;
   overflow-y: hidden;
+  max-width: 90vw;
+  text-align: center;
 }
 
 .c0:hover .ant-space-item {
@@ -66,6 +72,7 @@ exports[`FuqCard should be rendered 1`] = `
           style="margin-right: 8px;"
         >
           <span
+            class="c2"
             data-testid="icon-span"
           >
             <span>
@@ -146,6 +153,7 @@ exports[`FuqCard should be rendered 1`] = `
           class="ant-space-item"
         >
           <span
+            class="c2"
             data-testid="icon-span"
           >
             <span>
