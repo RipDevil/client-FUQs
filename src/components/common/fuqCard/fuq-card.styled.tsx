@@ -18,6 +18,8 @@ export const StyledCol = styled(Col)`
       color: inherit;
     }
     .ant-badge-count {
+      color: #fff;
+      box-shadow: inherit;
       background: #ff4d4f;
     }
   }
@@ -30,5 +32,7 @@ export const StyledCol = styled(Col)`
   .ant-badge-count {
     transition: 250ms ease;
     background: none;
+    color: transparent;
+    box-shadow: none;
   }
 `;
