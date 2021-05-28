@@ -7,11 +7,11 @@ import { ToggleIcon } from 'components/common/toggleIcon';
 import { StyledTitle, StyledCol } from './fuq-card.styled';
 const { Title } = Typography;
 
-export interface FuqCardProps {
+export type FuqCardProps = {
   title: string;
   text: string;
   url: string;
-}
+};
 
 export const FuqCard: React.FC<FuqCardProps> = ({ text, title, url }) => {
   let history = useHistory();

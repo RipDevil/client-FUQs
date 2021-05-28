@@ -11,6 +11,8 @@ export const StyledCol = styled(Col)`
   cursor: pointer;
   font-size: 20px;
   overflow-y: hidden;
+  max-width: 90vw;
+  text-align: center;
   &:hover {
     .ant-space-item {
       color: inherit;
