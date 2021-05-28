@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Badge } from 'antd';
 
 import { Icon as AntdIconType } from './toggle-icon.types'; // ugly? look inside
+import { StyledSpan } from './toggle-icon.styled';
 
-export interface ToggleIconProps {
+export type ToggleIconProps = {
   onClick: (value: boolean) => void;
   IconFrom: AntdIconType;
   IconTo: AntdIconType;
@@ -11,7 +12,7 @@ export interface ToggleIconProps {
   overflow?: number;
   size?: 'default' | 'small';
   title?: string;
-}
+};
 
 export const ToggleIcon: React.FC<ToggleIconProps> = (props) => {
   const { onClick, IconFrom, IconTo, counter, overflow, size, title } = props;
@@ -24,9 +25,9 @@ export const ToggleIcon: React.FC<ToggleIconProps> = (props) => {
   }
 
   return (
-    <span data-testid="icon-span" onClick={clickHandler}>
+    <StyledSpan data-testid="icon-span" onClick={clickHandler}>
       <span>{trigger ? <IconTo /> : <IconFrom title={title || ''} />}</span>
       <Badge size={size || 'default'} count={(counter || 0) + trigger} overflowCount={overflow || 100000}></Badge>
-    </span>
+    </StyledSpan>
   );
 };
