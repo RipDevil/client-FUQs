@@ -28,6 +28,8 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
 }
 
 .c1:hover .ant-badge-count {
+  color: #fff;
+  box-shadow: inherit;
   background: #ff4d4f;
 }
 
@@ -41,6 +43,8 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
   -webkit-transition: 250ms ease;
   transition: 250ms ease;
   background: none;
+  color: transparent;
+  box-shadow: none;
 }
 
 <div>
@@ -265,6 +269,8 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
 }
 
 .c1:hover .ant-badge-count {
+  color: #fff;
+  box-shadow: inherit;
   background: #ff4d4f;
 }
 
@@ -278,6 +284,8 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
   -webkit-transition: 250ms ease;
   transition: 250ms ease;
   background: none;
+  color: transparent;
+  box-shadow: none;
 }
 
 <div>
@@ -502,6 +510,8 @@ exports[`Config wrapper tests Should render error 1`] = `
 }
 
 .c1:hover .ant-badge-count {
+  color: #fff;
+  box-shadow: inherit;
   background: #ff4d4f;
 }
 
@@ -515,6 +525,8 @@ exports[`Config wrapper tests Should render error 1`] = `
   -webkit-transition: 250ms ease;
   transition: 250ms ease;
   background: none;
+  color: transparent;
+  box-shadow: none;
 }
 
 <div>
