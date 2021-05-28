@@ -8,6 +8,7 @@ import 'index.css';
 import { ToggleIcon as ToggleIconComponent, ToggleIconProps } from 'components/common/toggleIcon/toggle-icon';
 import { argTypes, args } from './lib';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Components/Common/Toggle Icon',
   component: ToggleIconComponent,
