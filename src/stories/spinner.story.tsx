@@ -5,18 +5,24 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import 'antd/dist/antd.css';
 import 'index.css';
 
+import doc from './docs/spinner.mdx';
 import { Spinner, SpinnerProps } from 'components/common/spinner/spinner';
 
 export default {
   title: 'Spinner',
   component: Spinner,
+  parameters: {
+    docs: {
+      page: doc,
+    },
+  },
 };
 
-const TheSpinner: Story<SpinnerProps> = ({ text, transparent, ...props }) => {
+export const Main: Story<SpinnerProps> = ({ text, transparent, ...props }) => {
   return <Spinner {...props} text={text} transparent={transparent} />;
 };
 
-export const Main = TheSpinner.bind({});
+Main.bind({});
 
 Main.argTypes = {
   text: {
