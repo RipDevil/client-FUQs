@@ -19,3 +19,15 @@ global.console = {
   error: jest.fn(),
   warn: jest.fn(),
 };
+
+let fakeClipboard = '';
+Object.assign(navigator, {
+  clipboard: {
+    writeText: (data: string) => {
+      fakeClipboard = data;
+    },
+    readText: () => {
+      return fakeClipboard;
+    },
+  },
+});

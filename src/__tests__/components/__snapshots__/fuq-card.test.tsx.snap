@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FuqCard should be rendered 1`] = `
+exports[`FuqCard tests Should render and have all needed elements 1`] = `
 .c2 {
   cursor: pointer;
 }
