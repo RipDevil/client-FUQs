@@ -6,16 +6,7 @@ services:
     container_name: fuq-frontend
     build:
       context: .
-      dockerfile: Dockerfile.application
+      dockerfile: Dockerfile
     ports:
       - '1337:80'
-
-  fuq-storybook:
-    container_name: fuq-storybook
-    build:
-      context: .
-      dockerfile: Dockerfile.storybook
-    ports:
-      - '6006:80'
-    depends_on:
-      - fuq-frontend
+      - '6006:6006'
