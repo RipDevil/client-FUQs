@@ -14,7 +14,6 @@ exports[`Credits tests Should be rendered if in development 1`] = `
 
 .c0:hover {
   font-size: 12px;
-  bacground-color: lightyellow;
 }
 
 <div>
