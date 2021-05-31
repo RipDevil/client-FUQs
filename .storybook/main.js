@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/preset-create-react-app',
     '@storybook/addon-controls',
     'storybook-addon-styled-component-theme',
+    '@storybook/addon-a11y'
   ],
   typescript: {
     reactDocgen: 'react-docgen-typescript-plugin',
