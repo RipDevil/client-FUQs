@@ -10,6 +10,5 @@ export const CreditsComponent = styled.div`
   transition: 500ms ease;
   &:hover {
     font-size: 12px;
-    bacground-color: lightyellow;
   }
 `;
