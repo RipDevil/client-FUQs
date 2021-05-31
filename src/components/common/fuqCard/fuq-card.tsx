@@ -29,11 +29,13 @@ export const FuqCard: React.FC<FuqCardProps> = ({ text, title, url }) => {
   }
 
   async function fuqPressed() {
-    navigator.clipboard.writeText(url);
+    if (navigator?.clipboard) {
+      navigator.clipboard.writeText(url);
 
-    message.info({
-      content: "FUQ's url copied to clipboard",
-    });
+      message.info({
+        content: "FUQ's url copied to clipboard",
+      });
+    }
   }
 
   const likesCount = 1817;
