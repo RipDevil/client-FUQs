@@ -6,9 +6,6 @@ export const CreditsComponent = styled.div`
   right: 10px;
   z-index: 1001;
   overflow: hidden;
-  font-size: 10px;
+  font-size: 30px;
   transition: 500ms ease;
-  &:hover {
-    font-size: 12px;
-  }
 `;

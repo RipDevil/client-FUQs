@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { GithubOutlined } from '@ant-design/icons';
 
 import { CreditsComponent } from './credits.styled';
 
@@ -11,19 +12,7 @@ export const Credits: React.FC<CreditsTypes> = ({ env }) => {
     <CreditsComponent>
       <span>
         <a href="https://github.com/RipDevil" title="RipDevil github page">
-          Github
-        </a>
-        <a href="https://github.com/users/RipDevil/projects/1" title="Projects in github">
-          /fuq
-        </a>
-        <a href="https://github.com/RipDevil/client-FUQs" title="Client repo in github">
-          /cli
-        </a>
-      </span>
-      <br />
-      <span>
-        <a href="https://ripdevil.github.io/#/" title="Github pages">
-          WebInstance
+          <GithubOutlined />
         </a>
       </span>
     </CreditsComponent>
