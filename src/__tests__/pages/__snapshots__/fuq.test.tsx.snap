@@ -23,20 +23,10 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
   text-align: center;
 }
 
-.c1:hover .ant-space-item {
-  color: inherit;
-}
-
 .c1:hover .ant-badge-count {
   color: #fff;
   box-shadow: inherit;
   background: #ff4d4f;
-}
-
-.c1 .ant-space-item {
-  -webkit-transition: 250ms ease;
-  transition: 250ms ease;
-  color: transparent;
 }
 
 .c1 .ant-badge-count {
@@ -47,6 +37,16 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
   box-shadow: none;
 }
 
+.c1 .ant-btn-link {
+  color: transparent;
+  -webkit-transition: 250ms ease;
+  transition: 250ms ease;
+}
+
+.c1:hover .ant-btn-link {
+  color: #cc3333;
+}
+
 <div>
     <div
       class="ant-row ant-row-center ant-row-middle c0"
@@ -54,6 +54,9 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
       <div
         class="ant-col c1"
       >
+        <div
+          class="ant-row ant-row-center"
+        />
         <div
           class="ant-row ant-row-center"
         >
@@ -88,7 +91,11 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
                 class="c3"
                 data-testid="icon-span"
               >
-                <span>
+                <button
+                  class="ant-btn ant-btn-link ant-btn-lg ant-btn-icon-only"
+                  data-testid="submit-form"
+                  type="button"
+                >
                   <span
                     aria-label="like"
                     class="anticon anticon-like"
@@ -109,14 +116,14 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
                       />
                     </svg>
                   </span>
-                </span>
+                </button>
                 <span
                   class="ant-badge ant-badge-not-a-wrapper"
                 >
                   <sup
                     class="ant-scroll-number ant-badge-count ant-badge-multiple-words"
                     data-show="true"
-                    title="1817"
+                    title="10"
                   >
                     <span
                       class="ant-scroll-number-only"
@@ -135,27 +142,7 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
                       <p
                         class="ant-scroll-number-only-unit current"
                       >
-                        8
-                      </p>
-                    </span>
-                    <span
-                      class="ant-scroll-number-only"
-                      style="transition: none;"
-                    >
-                      <p
-                        class="ant-scroll-number-only-unit current"
-                      >
-                        1
-                      </p>
-                    </span>
-                    <span
-                      class="ant-scroll-number-only"
-                      style="transition: none;"
-                    >
-                      <p
-                        class="ant-scroll-number-only-unit current"
-                      >
-                        7
+                        0
                       </p>
                     </span>
                   </sup>
@@ -169,7 +156,11 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
                 class="c3"
                 data-testid="icon-span"
               >
-                <span>
+                <button
+                  class="ant-btn ant-btn-link ant-btn-lg ant-btn-icon-only"
+                  data-testid="submit-form"
+                  type="button"
+                >
                   <span
                     aria-label="fire"
                     class="anticon anticon-fire"
@@ -190,14 +181,14 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
                       />
                     </svg>
                   </span>
-                </span>
+                </button>
                 <span
                   class="ant-badge ant-badge-not-a-wrapper"
                 >
                   <sup
                     class="ant-scroll-number ant-badge-count ant-badge-multiple-words"
                     data-show="true"
-                    title="100"
+                    title="160"
                   >
                     <span
                       class="ant-scroll-number-only"
@@ -216,7 +207,7 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
                       <p
                         class="ant-scroll-number-only-unit current"
                       >
-                        0
+                        6
                       </p>
                     </span>
                     <span
@@ -264,20 +255,10 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
   text-align: center;
 }
 
-.c1:hover .ant-space-item {
-  color: inherit;
-}
-
 .c1:hover .ant-badge-count {
   color: #fff;
   box-shadow: inherit;
   background: #ff4d4f;
-}
-
-.c1 .ant-space-item {
-  -webkit-transition: 250ms ease;
-  transition: 250ms ease;
-  color: transparent;
 }
 
 .c1 .ant-badge-count {
@@ -288,6 +269,16 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
   box-shadow: none;
 }
 
+.c1 .ant-btn-link {
+  color: transparent;
+  -webkit-transition: 250ms ease;
+  transition: 250ms ease;
+}
+
+.c1:hover .ant-btn-link {
+  color: #cc3333;
+}
+
 <div>
     <div
       class="ant-row ant-row-center ant-row-middle c0"
@@ -295,6 +286,9 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
       <div
         class="ant-col c1"
       >
+        <div
+          class="ant-row ant-row-center"
+        />
         <div
           class="ant-row ant-row-center"
         >
@@ -329,7 +323,11 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
                 class="c3"
                 data-testid="icon-span"
               >
-                <span>
+                <button
+                  class="ant-btn ant-btn-link ant-btn-lg ant-btn-icon-only"
+                  data-testid="submit-form"
+                  type="button"
+                >
                   <span
                     aria-label="like"
                     class="anticon anticon-like"
@@ -350,14 +348,14 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
                       />
                     </svg>
                   </span>
-                </span>
+                </button>
                 <span
                   class="ant-badge ant-badge-not-a-wrapper"
                 >
                   <sup
                     class="ant-scroll-number ant-badge-count ant-badge-multiple-words"
                     data-show="true"
-                    title="1817"
+                    title="10"
                   >
                     <span
                       class="ant-scroll-number-only"
@@ -376,27 +374,7 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
                       <p
                         class="ant-scroll-number-only-unit current"
                       >
-                        8
-                      </p>
-                    </span>
-                    <span
-                      class="ant-scroll-number-only"
-                      style="transition: none;"
-                    >
-                      <p
-                        class="ant-scroll-number-only-unit current"
-                      >
-                        1
-                      </p>
-                    </span>
-                    <span
-                      class="ant-scroll-number-only"
-                      style="transition: none;"
-                    >
-                      <p
-                        class="ant-scroll-number-only-unit current"
-                      >
-                        7
+                        0
                       </p>
                     </span>
                   </sup>
@@ -410,7 +388,11 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
                 class="c3"
                 data-testid="icon-span"
               >
-                <span>
+                <button
+                  class="ant-btn ant-btn-link ant-btn-lg ant-btn-icon-only"
+                  data-testid="submit-form"
+                  type="button"
+                >
                   <span
                     aria-label="fire"
                     class="anticon anticon-fire"
@@ -431,14 +413,14 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
                       />
                     </svg>
                   </span>
-                </span>
+                </button>
                 <span
                   class="ant-badge ant-badge-not-a-wrapper"
                 >
                   <sup
                     class="ant-scroll-number ant-badge-count ant-badge-multiple-words"
                     data-show="true"
-                    title="100"
+                    title="160"
                   >
                     <span
                       class="ant-scroll-number-only"
@@ -457,7 +439,7 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
                       <p
                         class="ant-scroll-number-only-unit current"
                       >
-                        0
+                        6
                       </p>
                     </span>
                     <span
@@ -505,20 +487,10 @@ exports[`Config wrapper tests Should render error 1`] = `
   text-align: center;
 }
 
-.c1:hover .ant-space-item {
-  color: inherit;
-}
-
 .c1:hover .ant-badge-count {
   color: #fff;
   box-shadow: inherit;
   background: #ff4d4f;
-}
-
-.c1 .ant-space-item {
-  -webkit-transition: 250ms ease;
-  transition: 250ms ease;
-  color: transparent;
 }
 
 .c1 .ant-badge-count {
@@ -529,6 +501,16 @@ exports[`Config wrapper tests Should render error 1`] = `
   box-shadow: none;
 }
 
+.c1 .ant-btn-link {
+  color: transparent;
+  -webkit-transition: 250ms ease;
+  transition: 250ms ease;
+}
+
+.c1:hover .ant-btn-link {
+  color: #cc3333;
+}
+
 <div>
     <div
       class="ant-row ant-row-center ant-row-middle c0"
@@ -536,6 +518,9 @@ exports[`Config wrapper tests Should render error 1`] = `
       <div
         class="ant-col c1"
       >
+        <div
+          class="ant-row ant-row-center"
+        />
         <div
           class="ant-row ant-row-center"
         >
@@ -570,7 +555,11 @@ exports[`Config wrapper tests Should render error 1`] = `
                 class="c3"
                 data-testid="icon-span"
               >
-                <span>
+                <button
+                  class="ant-btn ant-btn-link ant-btn-lg ant-btn-icon-only"
+                  data-testid="submit-form"
+                  type="button"
+                >
                   <span
                     aria-label="like"
                     class="anticon anticon-like"
@@ -591,14 +580,14 @@ exports[`Config wrapper tests Should render error 1`] = `
                       />
                     </svg>
                   </span>
-                </span>
+                </button>
                 <span
                   class="ant-badge ant-badge-not-a-wrapper"
                 >
                   <sup
                     class="ant-scroll-number ant-badge-count ant-badge-multiple-words"
                     data-show="true"
-                    title="1817"
+                    title="10"
                   >
                     <span
                       class="ant-scroll-number-only"
@@ -617,27 +606,7 @@ exports[`Config wrapper tests Should render error 1`] = `
                       <p
                         class="ant-scroll-number-only-unit current"
                       >
-                        8
-                      </p>
-                    </span>
-                    <span
-                      class="ant-scroll-number-only"
-                      style="transition: none;"
-                    >
-                      <p
-                        class="ant-scroll-number-only-unit current"
-                      >
-                        1
-                      </p>
-                    </span>
-                    <span
-                      class="ant-scroll-number-only"
-                      style="transition: none;"
-                    >
-                      <p
-                        class="ant-scroll-number-only-unit current"
-                      >
-                        7
+                        0
                       </p>
                     </span>
                   </sup>
@@ -651,7 +620,11 @@ exports[`Config wrapper tests Should render error 1`] = `
                 class="c3"
                 data-testid="icon-span"
               >
-                <span>
+                <button
+                  class="ant-btn ant-btn-link ant-btn-lg ant-btn-icon-only"
+                  data-testid="submit-form"
+                  type="button"
+                >
                   <span
                     aria-label="fire"
                     class="anticon anticon-fire"
@@ -672,14 +645,14 @@ exports[`Config wrapper tests Should render error 1`] = `
                       />
                     </svg>
                   </span>
-                </span>
+                </button>
                 <span
                   class="ant-badge ant-badge-not-a-wrapper"
                 >
                   <sup
                     class="ant-scroll-number ant-badge-count ant-badge-multiple-words"
                     data-show="true"
-                    title="100"
+                    title="160"
                   >
                     <span
                       class="ant-scroll-number-only"
@@ -698,7 +671,7 @@ exports[`Config wrapper tests Should render error 1`] = `
                       <p
                         class="ant-scroll-number-only-unit current"
                       >
-                        0
+                        6
                       </p>
                     </span>
                     <span

@@ -4,16 +4,17 @@ import { Row, Typography, Space, message } from 'antd';
 import { FireOutlined, FireFilled, LikeFilled, LikeOutlined } from '@ant-design/icons';
 
 import { ToggleIcon } from 'components/common/toggleIcon';
+import { InfluencerBadge } from 'components/common';
 import { StyledTitle, StyledCol } from './fuq-card.styled';
 const { Title } = Typography;
 
 export type FuqCardProps = {
   title: string;
   text: string;
-  url: string;
+  id?: string;
 };
 
-export const FuqCard: React.FC<FuqCardProps> = ({ text, title, url }) => {
+export const FuqCard: React.FC<FuqCardProps> = ({ text, title, id }) => {
   let history = useHistory();
   function likeHandler(value: boolean) {
     const messagePayload = {
@@ -23,14 +24,14 @@ export const FuqCard: React.FC<FuqCardProps> = ({ text, title, url }) => {
     message[value ? 'success' : 'info'](messagePayload);
   }
 
-  function influenceHandler(value: boolean) {
+  function influenceHandler() {
     // TODO: what should be made if a user cancels existing influenced FUQ?
-    history.push('/');
+    history.push(`/create/${id}`);
   }
 
   async function fuqPressed() {
     if (navigator?.clipboard) {
-      navigator.clipboard.writeText(url);
+      navigator.clipboard.writeText(`${window.location.href.replace(/fuq\/.*/g, '')}fuq/${id}`);
 
       message.info({
         content: "FUQ's url copied to clipboard",
@@ -38,11 +39,15 @@ export const FuqCard: React.FC<FuqCardProps> = ({ text, title, url }) => {
     }
   }
 
-  const likesCount = 1817;
-  const influenceCount = 100;
+  const likesCount = 10;
+  const influenceCount = 160;
+  const influencer = undefined;
 
   return (
     <StyledCol>
+      <Row justify="center">
+        <InfluencerBadge url={influencer && `/fuq/${influencer}`} />
+      </Row>
       <Row justify="center">
         <StyledTitle onClick={fuqPressed} title={title} type="danger" ellipsis={true}>
           {title}
@@ -55,9 +60,21 @@ export const FuqCard: React.FC<FuqCardProps> = ({ text, title, url }) => {
       </Row>
       <Row justify="center">
         <Space>
-          <ToggleIcon onClick={likeHandler} IconFrom={LikeOutlined} IconTo={LikeFilled} counter={likesCount} />
+          <ToggleIcon
+            onClick={likeHandler}
+            IconFrom={LikeOutlined}
+            IconTo={LikeFilled}
+            counter={likesCount}
+            overflow={9000}
+          />
 
-          <ToggleIcon onClick={influenceHandler} IconFrom={FireOutlined} IconTo={FireFilled} counter={influenceCount} />
+          <ToggleIcon
+            onClick={influenceHandler}
+            IconFrom={FireOutlined}
+            IconTo={FireFilled}
+            counter={influenceCount}
+            overflow={9000}
+          />
           {/* Todo share button which opens a share dialog or something kek */}
         </Space>
       </Row>

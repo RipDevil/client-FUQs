@@ -7,13 +7,14 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import 'antd/dist/antd.css';
 import 'index.css';
 
-import { FuqCard as FuqCardComponent, FuqCardProps } from 'components/common/fuqCard/fuq-card';
+import { InfluencerBadge as InfluencerBadgeComponent, InfluencerBadgeTypes } from './influencer-badge';
+import { StyledCol, StyledRow } from 'components/common/createFuqCard/create-fuq-card.styled';
 import { argTypes, args } from './lib';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'Components/Common/FUQ/Fuq Card',
-  component: FuqCardComponent,
+  title: 'Components/Common/Influencer Badge',
+  component: InfluencerBadgeComponent,
   parameters: {
     controls: { sort: 'requiredFirst' },
   },
@@ -21,11 +22,15 @@ export default {
   argTypes,
 };
 
-export const FuqCard: Story<FuqCardProps> = ({ ...props }) => {
+export const InfluencerBadge: Story<InfluencerBadgeTypes> = ({ ...props }) => {
   return (
     <Router history={createMemoryHistory({ initialEntries: ['/'] })}>
       <Route path={'/'}>
-        <FuqCardComponent {...props} />
+        <StyledCol>
+          <StyledRow justify="center">
+            <InfluencerBadgeComponent {...props} />
+          </StyledRow>
+        </StyledCol>
       </Route>
     </Router>
   );

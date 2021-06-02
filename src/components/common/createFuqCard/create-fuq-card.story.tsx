@@ -7,13 +7,16 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import 'antd/dist/antd.css';
 import 'index.css';
 
-import { FuqCard as FuqCardComponent, FuqCardProps } from 'components/common/fuqCard/fuq-card';
+import {
+  CreateFuqCard as CreateFuqCardComponent,
+  CreateFuqCardProps,
+} from 'components/common/createFuqCard/create-fuq-card';
 import { argTypes, args } from './lib';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'Components/Common/FUQ/Fuq Card',
-  component: FuqCardComponent,
+  title: 'Components/Common/FUQ/Create Fuq Card',
+  component: CreateFuqCardComponent,
   parameters: {
     controls: { sort: 'requiredFirst' },
   },
@@ -21,11 +24,11 @@ export default {
   argTypes,
 };
 
-export const FuqCard: Story<FuqCardProps> = ({ ...props }) => {
+export const CreateFuqCard: Story<CreateFuqCardProps> = ({ ...props }) => {
   return (
     <Router history={createMemoryHistory({ initialEntries: ['/'] })}>
       <Route path={'/'}>
-        <FuqCardComponent {...props} />
+        <CreateFuqCardComponent {...props} />
       </Route>
     </Router>
   );
