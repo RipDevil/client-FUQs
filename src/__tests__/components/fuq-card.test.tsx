@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
@@ -9,9 +9,10 @@ afterEach(() => {
 });
 
 describe('FuqCard tests', () => {
+  const FAKE_ID = '123';
   it('Should render and have all needed elements', () => {
     const { getByText, getAllByTestId, container } = render(
-      <FuqCard title="Some title" url="fake/url/123" text="Some text" />,
+      <FuqCard title="Some title" id={FAKE_ID} text="Some text" />,
     );
 
     const [elementWithTitle, elementWithText] = [getByText('Some title'), getByText('Some text')];
@@ -27,7 +28,7 @@ describe('FuqCard tests', () => {
     const { getByText, getAllByTestId } = render(
       <Router history={createMemoryHistory({ initialEntries: ['/fuq/ID'] })}>
         <Route path={'/fuq/ID'}>
-          <FuqCard title="Some title" url="/fake/url/123" text="Some text" />
+          <FuqCard title="Some title" id={FAKE_ID} text="Some text" />
         </Route>
         <Route path={'/'}>
           <h1>Test page</h1>
@@ -47,9 +48,7 @@ describe('FuqCard tests', () => {
   });
 
   it('Should copy to the clipboard after title click', async () => {
-    const FAKE_URL = 'fake/url/123';
-
-    const { getByText } = render(<FuqCard title="Some title" url={FAKE_URL} text="Some text" />);
+    const { getByText } = render(<FuqCard title="Some title" id={FAKE_ID} text="Some text" />);
 
     const titleElement = await waitFor(() => {
       const clock = getByText('Some title');
@@ -59,7 +58,7 @@ describe('FuqCard tests', () => {
     fireEvent.click(titleElement);
 
     const clipboardData = await waitFor(async () => {
-      return (await navigator.clipboard.readText()) === FAKE_URL;
+      return (await navigator.clipboard.readText()) === `http://localhost/fuq/${FAKE_ID}`;
     });
 
     expect(clipboardData).toBeTruthy();

@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create FUQ card tests Should render create FUQ card 1`] = `
+.c1 {
+  font-size: 50px !important;
+  color: #ff4d4f;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  line-height: 1.23;
+}
+
+.c2 {
+  font-size: 24px !important;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  line-height: 1.35 !important;
+}
+
+.c2 textarea {
+  line-height: 1.35 !important;
+}
+
+.c0 {
+  font-size: 20px;
+  overflow-y: hidden;
+  max-width: 90vw;
+  text-align: center;
+}
+
+.c0 .ant-btn-link {
+  color: transparent;
+  -webkit-transition: 250ms ease;
+  transition: 250ms ease;
+}
+
+.c0 .ant-btn-link:focus {
+  color: #cc3333;
+  border-bottom: solid 1px #c33;
+}
+
+.c0:hover .ant-btn-link {
+  color: #cc3333;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="ant-col c0"
+  >
+    <div
+      class="ant-row ant-row-center"
+    />
+    <div
+      class="ant-row ant-row-center"
+    >
+      <input
+        class="ant-input ant-input-borderless c1"
+        data-testid="title-input"
+        id="title"
+        maxlength="30"
+        placeholder="Write a FUQ title here"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="ant-row ant-row-center"
+    >
+      <textarea
+        class="ant-input ant-input-borderless c2"
+        data-testid="text-input"
+        id="text"
+        placeholder="Write some hate messages here, my fren"
+        style="height: -16px; min-height: -4px; max-height: -16px; overflow-y: hidden; resize: none; overflow-x: hidden;"
+      />
+    </div>
+    <div
+      class="ant-row ant-row-center c3"
+    >
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn ant-btn-link ant-btn-lg ant-btn-icon-only"
+            data-testid="clear-form"
+            title="Clear fields"
+            type="button"
+          >
+            <span
+              aria-label="rollback"
+              class="anticon anticon-rollback"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="rollback"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M793 242H366v-74c0-6.7-7.7-10.4-12.9-6.3l-142 112a8 8 0 000 12.6l142 112c5.2 4.1 12.9.4 12.9-6.3v-74h415v470H175c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h618c35.3 0 64-28.7 64-64V306c0-35.3-28.7-64-64-64z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn ant-btn-link ant-btn-lg ant-btn-icon-only"
+            data-testid="submit-form"
+            title="Create FUQ"
+            type="button"
+          >
+            <span
+              aria-label="check"
+              class="anticon anticon-check"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="check"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

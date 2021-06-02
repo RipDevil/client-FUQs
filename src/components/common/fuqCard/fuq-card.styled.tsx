@@ -14,25 +14,25 @@ export const StyledCol = styled(Col)`
   max-width: 90vw;
   text-align: center;
   &:hover {
-    .ant-space-item {
-      color: inherit;
-    }
     .ant-badge-count {
       color: #fff;
       box-shadow: inherit;
       background: #ff4d4f;
     }
   }
-
-  .ant-space-item {
-    transition: 250ms ease;
-    color: transparent;
-  }
-
   .ant-badge-count {
     transition: 250ms ease;
     background: none;
     color: transparent;
     box-shadow: none;
+  }
+  .ant-btn-link {
+    color: transparent;
+    transition: 250ms ease;
+  }
+  &:hover {
+    .ant-btn-link {
+      color: #cc3333;
+    }
   }
 `;
