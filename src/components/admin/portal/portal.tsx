@@ -1,30 +1,29 @@
 import * as React from 'react';
-import H from 'history';
+import { Location } from 'history';
 import { Link, useLocation } from 'react-router-dom';
-import { HomeOutlined, LoginOutlined } from '@ant-design/icons';
+import { HomeOutlined, LoginOutlined, PlusCircleOutlined } from '@ant-design/icons';
 
-import { PortalComponent } from './portal.styled';
+import { PortalComponent, LinkStyled } from './portal.styled';
 import { CustomPortalLink } from './custom-portal-link';
 
 export const Portal: React.FC = () => {
-  const location = useLocation<H.Location>();
+  const location = useLocation<Location>();
 
-  const isSneakyBastard = localStorage.getItem('fuqs-admin');
-  if (!isSneakyBastard) {
-    return null;
-  }
+  const { pathname } = location;
+  const onPrivateRoute = pathname === '/login' || pathname === '/badmin';
 
   return (
     <PortalComponent>
-      <Link
-        to={location.pathname === '/login' || location.pathname === '/badmin' ? '' : '/login'}
-        component={CustomPortalLink}
-      >
-        {location.pathname === '/login' || location.pathname === '/badmin' ? (
-          <HomeOutlined title="Main page" />
-        ) : (
+      {!onPrivateRoute && (
+        <LinkStyled data-testid="portal-link-login" to={'/login'} component={CustomPortalLink}>
           <LoginOutlined title="Login" />
-        )}
+        </LinkStyled>
+      )}
+      <Link data-testid="portal-link-home" to="/" component={CustomPortalLink}>
+        <HomeOutlined title="Main page" />
+      </Link>
+      <Link data-testid="portal-link-create" to="/create" component={CustomPortalLink}>
+        <PlusCircleOutlined title="Create Page" />
       </Link>
     </PortalComponent>
   );
