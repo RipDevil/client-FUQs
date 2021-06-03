@@ -1,24 +1,24 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Layout } from 'templates';
 
 describe('Layout tests', () => {
   describe('Should render children if presented', () => {
     it('Text', () => {
-      const { getByText, container } = render(<Layout>Test</Layout>);
-      const testedElement = getByText(/Test/i);
+      const { container } = render(<Layout>Test</Layout>);
+      const testedElement = screen.getByText(/Test/i);
       expect(testedElement).toBeInTheDocument();
       expect(container).toMatchSnapshot();
     });
 
     it('Node', () => {
-      const { getByTestId, container } = render(
+      const { container } = render(
         <Layout>
           <span data-testid="test">
             Text <span>Another test</span>
           </span>
         </Layout>,
       );
-      const testedElement = getByTestId(/test/);
+      const testedElement = screen.getByTestId(/test/);
       expect(testedElement).toBeInTheDocument();
       expect(container).toMatchSnapshot();
     });

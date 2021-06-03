@@ -44,7 +44,7 @@ describe('Influencer badge tests', () => {
   });
 
   it('Should redirect on the Link click', async () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <Router history={createMemoryHistory({ initialEntries: ['/fuq'] })}>
         <Route path={'/fuq'}>
           <InfluencerBadge url="/test-link" />
@@ -64,7 +64,7 @@ describe('Influencer badge tests', () => {
       fireEvent.click(linkElement);
 
       const isAnotherPage = await waitFor(() => {
-        return getByText(/Test/i);
+        return screen.getByText(/Test/i);
       });
       expect(isAnotherPage).toBeTruthy();
     }

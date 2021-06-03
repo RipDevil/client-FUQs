@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { render, waitFor, cleanup, fireEvent } from '@testing-library/react';
+import { render, waitFor, cleanup, fireEvent, screen } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { authUpdate, authReset } from 'pages/login/model';
@@ -38,7 +38,7 @@ afterEach(() => {
 describe('Login page tests', () => {
   it('A user should be redirected to /badmin if has already authenticated', async () => {
     authUpdate(FAKE_CREDENTIALS);
-    const { getByTestId } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/login'] })}>
           <Route path={'/login'} component={Login} />
@@ -49,15 +49,15 @@ describe('Login page tests', () => {
 
     // wait until a user is redirected to a page where you can find such element
     await waitFor(() => {
-      const buttonOnBadminPage = getByTestId(/0/);
+      const buttonOnBadminPage = screen.getByTestId(/0/);
       return buttonOnBadminPage;
     });
 
-    expect(getByTestId('0')).toBeTruthy();
+    expect(screen.getByTestId(/0/)).toBeTruthy();
   });
 
   it('Page should be rendered if user has not authenticated', async () => {
-    const { container, getByTestId } = render(
+    const { container } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/login'] })}>
           <Route path={'/login'} component={Login} />
@@ -68,13 +68,13 @@ describe('Login page tests', () => {
     expect(container).toMatchSnapshot();
 
     // The input has to be focused
-    const loginInput = getByTestId(/login-input/);
+    const loginInput = screen.getByTestId(/login-input/);
     expect(loginInput).toHaveFocus();
   });
 
   describe('Login form', () => {
     it('Login must be more than 3 and less than 30', async () => {
-      const { getByTestId, getByText } = render(
+      render(
         <QueryClientProvider client={queryClient}>
           <Router history={createMemoryHistory({ initialEntries: ['/login'] })}>
             <Route path={'/login'} component={Login} />
@@ -82,18 +82,18 @@ describe('Login page tests', () => {
         </QueryClientProvider>,
       );
 
-      const loginInput = getByTestId(/login-input/);
+      const loginInput = screen.getByTestId(/login-input/);
       fireEvent.change(loginInput, { target: { value: 'q' } });
 
       const fuqTitle = await waitFor(() => {
-        return getByText(/Login must be more than 3 symbols/i);
+        return screen.getByText(/Login must be more than 3 symbols/i);
       });
 
       expect(fuqTitle).toBeInTheDocument();
     });
 
     it('Pass must be more than 3 and less than 30', async () => {
-      const { getByTestId, getByText } = render(
+      render(
         <QueryClientProvider client={queryClient}>
           <Router history={createMemoryHistory({ initialEntries: ['/login'] })}>
             <Route path={'/login'} component={Login} />
@@ -101,11 +101,11 @@ describe('Login page tests', () => {
         </QueryClientProvider>,
       );
 
-      const passInput = getByTestId(/password-input/);
+      const passInput = screen.getByTestId(/password-input/);
       fireEvent.change(passInput, { target: { value: 'q' } });
 
       const fuqTitle = await waitFor(() => {
-        return getByText(/Password must be more than 3 symbols/i);
+        return screen.getByText(/Password must be more than 3 symbols/i);
       });
 
       expect(fuqTitle).toBeInTheDocument();
@@ -116,7 +116,7 @@ describe('Login page tests', () => {
         ...FAKE_CREDENTIALS,
       });
 
-      const { getByTestId } = render(
+      render(
         <QueryClientProvider client={queryClient}>
           <Router history={createMemoryHistory({ initialEntries: ['/login'] })}>
             <Route path={'/login'} component={Login} />
@@ -126,34 +126,34 @@ describe('Login page tests', () => {
       );
 
       // enter text in the login input
-      const loginInput = getByTestId(/login-input/i);
+      const loginInput = screen.getByTestId(/login-input/i);
       fireEvent.change(loginInput, { target: { value: 'TEST' } });
 
       await waitFor(() => {
-        const _loginInput = getByTestId(/login-input/i);
+        const _loginInput = screen.getByTestId(/login-input/i);
         return _loginInput.getAttribute('value') === 'TEST';
       });
 
       // enter text in the pass input
-      const passInput = getByTestId(/password-input/);
+      const passInput = screen.getByTestId(/password-input/);
       fireEvent.change(passInput, { target: { value: 'TEST_PASSWORD' } });
 
       await waitFor(() => {
-        const _passInput = getByTestId(/password-input/);
+        const _passInput = screen.getByTestId(/password-input/);
         return _passInput.getAttribute('value') === 'TEST_PASSWORD';
       });
 
       // press the login button
-      const loginButton = getByTestId(/button-login/);
+      const loginButton = screen.getByTestId(/button-login/);
       fireEvent.click(loginButton);
 
       // wait until a user is redirected to a page where you can find such element
       await waitFor(() => {
-        const buttonOnBadminPage = getByTestId(/0/);
+        const buttonOnBadminPage = screen.getByTestId(/0/);
         return buttonOnBadminPage;
       });
 
-      expect(getByTestId(/0/)).toBeTruthy();
+      expect(screen.getByTestId(/0/)).toBeTruthy();
     });
   });
 });

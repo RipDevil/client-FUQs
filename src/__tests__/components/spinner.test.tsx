@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Spinner } from 'components/common';
 
 describe('Spinner tests', () => {
@@ -15,8 +15,8 @@ describe('Spinner tests', () => {
   });
 
   it('Should be rendered with text', () => {
-    const { getByText } = render(<Spinner text={'Some text'} />);
-    const element = getByText(/Some text/i);
+    render(<Spinner text={'Some text'} />);
+    const element = screen.getByText(/Some text/i);
     expect(element).toBeInTheDocument();
 
     expect(element).toMatchSnapshot();

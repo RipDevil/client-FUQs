@@ -1,7 +1,7 @@
 import { Router, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { createMemoryHistory } from 'history';
-import { render, cleanup, waitFor, fireEvent } from '@testing-library/react';
+import { render, cleanup, waitFor, fireEvent, screen } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -77,7 +77,7 @@ describe('Create FUQ page tests', () => {
 
     mockAxios.onPut('/test/fuq').reply(201, res);
 
-    const { getByTestId, getByText } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/create'] })}>
           <Route path={'/create'} component={CreateFuq} />
@@ -88,13 +88,13 @@ describe('Create FUQ page tests', () => {
       </QueryClientProvider>,
     );
 
-    fireEvent.change(getByTestId(/title-input/), { target: { value: 'string' } });
-    fireEvent.change(getByTestId(/text-input/), { target: { value: 'string' } });
+    fireEvent.change(screen.getByTestId(/title-input/), { target: { value: 'string' } });
+    fireEvent.change(screen.getByTestId(/text-input/), { target: { value: 'string' } });
 
-    fireEvent.click(getByTestId(/submit-form/));
+    fireEvent.click(screen.getByTestId(/submit-form/));
 
     const isOnAnotherPage = await waitFor(() => {
-      return getByText(/Mock Page/i);
+      return screen.getByText(/Mock Page/i);
     });
 
     expect(isOnAnotherPage).toBeTruthy();

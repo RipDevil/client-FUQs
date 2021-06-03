@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { render, waitFor, cleanup } from '@testing-library/react';
+import { render, waitFor, cleanup, screen } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -31,7 +31,7 @@ describe('Config wrapper tests', () => {
   it('Should render loader', async () => {
     mockAxios.onGet('/fuq').reply(200, {});
 
-    const { getByText } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/'] })}>
           <Route path={'/'} component={FuqPage} />
@@ -39,7 +39,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const loadingElement = getByText(/Loading a FUQ/i);
+    const loadingElement = screen.getByText(/Loading a FUQ/i);
     expect(loadingElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
   });
@@ -55,7 +55,7 @@ describe('Config wrapper tests', () => {
       crdate: 'string',
     });
 
-    const { getAllByText } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/'] })}>
           <Route path={'/'} component={FuqPage} />
@@ -63,7 +63,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElements = await waitFor(() => getAllByText(/string/i));
+    const resolvedElements = await waitFor(() => screen.getAllByText(/string/i));
     resolvedElements.forEach((item) => {
       expect(item).toBeInTheDocument();
     });
@@ -81,7 +81,7 @@ describe('Config wrapper tests', () => {
       crdate: 'string',
     });
 
-    const { getAllByText } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/fuq/13'] })}>
           <Route path={'/fuq/:id'} component={FuqPage} />
@@ -89,7 +89,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElements = await waitFor(() => getAllByText(/string/i));
+    const resolvedElements = await waitFor(() => screen.getAllByText(/string/i));
     resolvedElements.forEach((item) => {
       expect(item).toBeInTheDocument();
     });
@@ -99,7 +99,7 @@ describe('Config wrapper tests', () => {
   it('Should render error', async () => {
     mockAxios.onGet('/fuq/13').reply(404);
 
-    const { getByText } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/fuq/13'] })}>
           <Route path={'/fuq/:id'} component={FuqPage} />
@@ -107,7 +107,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElement = await waitFor(() => getByText(/Error/i));
+    const resolvedElement = await waitFor(() => screen.getByText(/Error/i));
     expect(resolvedElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
   });

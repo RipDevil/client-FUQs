@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { render, waitFor, cleanup } from '@testing-library/react';
+import { render, waitFor, cleanup, screen } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -31,17 +31,17 @@ describe('Config wrapper tests', () => {
       server: 'test',
     });
 
-    const { getByText } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <ConfigWrapper>{'test'}</ConfigWrapper>
       </QueryClientProvider>,
     );
 
-    const loadingElement = getByText(/Loading config/i);
+    const loadingElement = screen.getByText(/Loading config/i);
     expect(loadingElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
 
-    const resolvedElement = await waitFor(() => getByText(/test/i));
+    const resolvedElement = await waitFor(() => screen.getByText(/test/i));
     expect(resolvedElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
   });

@@ -11,12 +11,10 @@ afterEach(() => {
 describe('FuqCard tests', () => {
   const FAKE_ID = '123';
   it('Should render and have all needed elements', () => {
-    const { getByText, getAllByTestId, container } = render(
-      <FuqCard title="Some title" id={FAKE_ID} text="Some text" />,
-    );
+    const { container } = render(<FuqCard title="Some title" id={FAKE_ID} text="Some text" />);
 
-    const [elementWithTitle, elementWithText] = [getByText(/Some title/i), getByText(/Some text/i)];
-    const buttons = getAllByTestId(/icon-span/);
+    const [elementWithTitle, elementWithText] = [screen.getByText(/Some title/i), screen.getByText(/Some text/i)];
+    const buttons = screen.getAllByTestId(/icon-span/);
 
     expect(elementWithTitle).toBeInTheDocument();
     expect(elementWithText).toBeInTheDocument();
@@ -25,7 +23,7 @@ describe('FuqCard tests', () => {
   });
 
   it('Should redirect after pressing the influence button', async () => {
-    const { getByText, getAllByTestId } = render(
+    render(
       <Router history={createMemoryHistory({ initialEntries: ['/fuq/ID'] })}>
         <Route path={'/fuq/ID'}>
           <FuqCard title="Some title" id={FAKE_ID} text="Some text" />
@@ -36,11 +34,11 @@ describe('FuqCard tests', () => {
       </Router>,
     );
 
-    const buttons = getAllByTestId(/icon-span/);
+    const buttons = screen.getAllByTestId(/icon-span/);
     buttons.forEach((b) => fireEvent.click(b));
 
     const testPageLabel = await waitFor(() => {
-      const clock = getByText(/Test page/i);
+      const clock = screen.getByText(/Test page/i);
       return clock;
     });
 
@@ -48,10 +46,10 @@ describe('FuqCard tests', () => {
   });
 
   it('Should copy to the clipboard after title click', async () => {
-    const { getByText } = render(<FuqCard title="Some title" id={FAKE_ID} text="Some text" />);
+    render(<FuqCard title="Some title" id={FAKE_ID} text="Some text" />);
 
     const titleElement = await waitFor(() => {
-      const clock = getByText(/Some title/i);
+      const clock = screen.getByText(/Some title/i);
       return clock;
     });
 

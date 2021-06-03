@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import { ToggleIcon } from 'components/common';
 
 import { ApiFilled, ApiOutlined } from '@ant-design/icons';
@@ -29,11 +29,11 @@ describe('ToggleIcon tests', () => {
       callbackFunctionExecuted = value;
     }
 
-    const { container, getByTestId } = render(
+    const { container } = render(
       <ToggleIcon IconFrom={ApiFilled} IconTo={ApiOutlined} onClick={callback} title="Test title" counter={1000} />,
     );
 
-    const iconElement = getByTestId(/icon-span/);
+    const iconElement = screen.getByTestId(/icon-span/);
     const iconFrom = container.querySelector('svg');
     const iconFromPath = container.querySelector('path')?.getAttribute('d');
 

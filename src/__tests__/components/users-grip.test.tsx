@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { render, waitFor, cleanup } from '@testing-library/react';
+import { render, waitFor, cleanup, screen } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -51,13 +51,13 @@ describe('UsersGrip tests', () => {
     authUpdate(FAKE_CREDENTIALS);
     mockAxios.onGet('/users').reply(500, new Error('FAKE ERROR'));
 
-    const { container, getByText } = render(
+    const { container } = render(
       <QueryClientProvider client={queryClient}>
         <UsersGrip />
       </QueryClientProvider>,
     );
 
-    await waitFor(() => getByText(/Error!/i));
+    await waitFor(() => screen.getByText(/Error!/i));
 
     expect(container).toMatchSnapshot();
   });
@@ -79,13 +79,13 @@ describe('UsersGrip tests', () => {
     authUpdate(FAKE_CREDENTIALS);
     mockAxios.onGet('/users').reply(200, usersResult);
 
-    const { container, getByText } = render(
+    const { container } = render(
       <QueryClientProvider client={queryClient}>
         <UsersGrip />
       </QueryClientProvider>,
     );
 
-    await waitFor(() => getByText(/FAKE_LOGIN_2/i));
+    await waitFor(() => screen.getByText(/FAKE_LOGIN_2/i));
 
     expect(container).toMatchSnapshot();
   });

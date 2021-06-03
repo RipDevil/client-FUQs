@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { render, waitFor, cleanup, fireEvent } from '@testing-library/react';
+import { render, waitFor, cleanup, fireEvent, screen } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { authUpdate, authReset } from 'pages/login/model';
@@ -37,7 +37,7 @@ afterEach(() => {
 
 describe('Admin page tests', () => {
   it('Admin page should NOT be rendered because of bad credentials', async () => {
-    const { container, getByTestId } = render(
+    const { container } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/badmin'] })}>
           <Route path={'/badmin'} component={Admin} />
@@ -47,7 +47,7 @@ describe('Admin page tests', () => {
     );
 
     await waitFor(() => {
-      const loginButton = getByTestId(/button-login/);
+      const loginButton = screen.getByTestId(/button-login/);
       return loginButton;
     });
 
@@ -59,7 +59,7 @@ describe('Admin page tests', () => {
 
     mockAxios.onGet('/users').reply(200, []);
 
-    const { container, getByText } = render(
+    const { container } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/badmin'] })}>
           <Route path={'/badmin'} component={Admin} />
@@ -67,7 +67,7 @@ describe('Admin page tests', () => {
       </QueryClientProvider>,
     );
 
-    await waitFor(() => getByText(/Actions/i));
+    await waitFor(() => screen.getByText(/Actions/i));
 
     expect(container).toMatchSnapshot();
   });
@@ -75,7 +75,7 @@ describe('Admin page tests', () => {
   it('User have to be redirected to the login page from admin page after logout', async () => {
     mockAxios.onPost('/auth/logout').reply(204, 'Success');
     authUpdate(FAKE_CREDENTIALS);
-    const { getByTestId } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/badmin'] })}>
           <Route path={'/badmin'} component={Admin} />
@@ -84,18 +84,18 @@ describe('Admin page tests', () => {
       </QueryClientProvider>,
     );
 
-    const logoutButton = getByTestId(/logout-btn/);
+    const logoutButton = screen.getByTestId(/logout-btn/);
     fireEvent.click(logoutButton);
 
     await waitFor(() => {
-      const loginButton = getByTestId(/button-login/);
+      const loginButton = screen.getByTestId(/button-login/);
       return loginButton;
     });
   });
 
   it('On a grip click the menu should change', async () => {
     authUpdate(FAKE_CREDENTIALS);
-    const { getByTestId, getAllByTitle } = render(
+    render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/badmin'] })}>
           <Route path={'/badmin'} component={Admin} />
@@ -104,13 +104,13 @@ describe('Admin page tests', () => {
     );
 
     // @mna: default grip rn is the first one => 0
-    expect(getAllByTitle(/Users/i).length).toBeTruthy();
+    expect(screen.getAllByTitle(/Users/i).length).toBeTruthy();
 
-    const itemButton = getByTestId(/1/);
+    const itemButton = screen.getByTestId(/1/);
     fireEvent.click(itemButton);
 
     await waitFor(() => {
-      const fuqsGripTitle = getAllByTitle(/FUQs/i);
+      const fuqsGripTitle = screen.getAllByTitle(/FUQs/i);
       return fuqsGripTitle;
     });
   });
