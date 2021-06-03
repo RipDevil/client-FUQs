@@ -9,10 +9,20 @@ beforeAll(() => {
 });
 
 describe('when rendered', () => {
-  it('successfully', async () => {
+  it('in root route', async () => {
     render(
       <Router history={createMemoryHistory({ initialEntries: ['/'] })}>
         <Route path={'/'} component={Portal} />
+      </Router>,
+    );
+
+    expect(screen.queryAllByTestId(/portal-link-/).length).toEqual(1);
+  });
+
+  it('not in root route', async () => {
+    render(
+      <Router history={createMemoryHistory({ initialEntries: ['/create'] })}>
+        <Route path={'/create'} component={Portal} />
       </Router>,
     );
 
