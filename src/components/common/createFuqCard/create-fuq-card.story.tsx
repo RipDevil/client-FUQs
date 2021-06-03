@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story } from '@storybook/react';
 import { Router, Route } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
