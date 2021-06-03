@@ -18,7 +18,7 @@ describe('Layout tests', () => {
           </span>
         </Layout>,
       );
-      const testedElement = getByTestId('test');
+      const testedElement = getByTestId(/test/);
       expect(testedElement).toBeInTheDocument();
       expect(container).toMatchSnapshot();
     });
@@ -26,8 +26,6 @@ describe('Layout tests', () => {
 
   it('Should render null if no children presented', () => {
     const { container } = render(<Layout></Layout>);
-    const testedElement = container.querySelector('.ant-row');
-    expect(testedElement).toBeEmpty();
     expect(container).toMatchSnapshot();
   });
 });

@@ -37,11 +37,11 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const loadingElement = getByText('Loading config');
+    const loadingElement = getByText(/Loading config/i);
     expect(loadingElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
 
-    const resolvedElement = await waitFor(() => getByText('test'));
+    const resolvedElement = await waitFor(() => getByText(/test/i));
     expect(resolvedElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
   });

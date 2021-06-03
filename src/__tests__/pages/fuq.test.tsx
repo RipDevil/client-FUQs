@@ -39,7 +39,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const loadingElement = getByText('Loading a FUQ');
+    const loadingElement = getByText(/Loading a FUQ/i);
     expect(loadingElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
   });
@@ -63,7 +63,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElements = await waitFor(() => getAllByText('string'));
+    const resolvedElements = await waitFor(() => getAllByText(/string/i));
     resolvedElements.forEach((item) => {
       expect(item).toBeInTheDocument();
     });
@@ -89,7 +89,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElements = await waitFor(() => getAllByText('string'));
+    const resolvedElements = await waitFor(() => getAllByText(/string/i));
     resolvedElements.forEach((item) => {
       expect(item).toBeInTheDocument();
     });
@@ -107,7 +107,7 @@ describe('Config wrapper tests', () => {
       </QueryClientProvider>,
     );
 
-    const resolvedElement = await waitFor(() => getByText('Error'));
+    const resolvedElement = await waitFor(() => getByText(/Error/i));
     expect(resolvedElement).toBeInTheDocument();
     expect(document.body).toMatchSnapshot();
   });

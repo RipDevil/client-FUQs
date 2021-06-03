@@ -64,7 +64,7 @@ describe('Influencer badge tests', () => {
       fireEvent.click(linkElement);
 
       const isAnotherPage = await waitFor(() => {
-        return getByText('Test');
+        return getByText(/Test/i);
       });
       expect(isAnotherPage).toBeTruthy();
     }

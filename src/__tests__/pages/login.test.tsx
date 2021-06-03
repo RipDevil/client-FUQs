@@ -49,7 +49,7 @@ describe('Login page tests', () => {
 
     // wait until a user is redirected to a page where you can find such element
     await waitFor(() => {
-      const buttonOnBadminPage = getByTestId('0');
+      const buttonOnBadminPage = getByTestId(/0/);
       return buttonOnBadminPage;
     });
 
@@ -68,7 +68,7 @@ describe('Login page tests', () => {
     expect(container).toMatchSnapshot();
 
     // The input has to be focused
-    const loginInput = getByTestId('login-input');
+    const loginInput = getByTestId(/login-input/);
     expect(loginInput).toHaveFocus();
   });
 
@@ -82,15 +82,14 @@ describe('Login page tests', () => {
         </QueryClientProvider>,
       );
 
-      const loginInput = getByTestId('login-input');
+      const loginInput = getByTestId(/login-input/);
       fireEvent.change(loginInput, { target: { value: 'q' } });
 
-      await waitFor(() => {
-        const fuqTitle = getByText('Login must be more than 3 symbols');
-        return fuqTitle;
+      const fuqTitle = await waitFor(() => {
+        return getByText(/Login must be more than 3 symbols/i);
       });
 
-      expect(getByText('Login must be more than 3 symbols')).toBeTruthy();
+      expect(fuqTitle).toBeInTheDocument();
     });
 
     it('Pass must be more than 3 and less than 30', async () => {
@@ -102,15 +101,14 @@ describe('Login page tests', () => {
         </QueryClientProvider>,
       );
 
-      const passInput = getByTestId('password-input');
+      const passInput = getByTestId(/password-input/);
       fireEvent.change(passInput, { target: { value: 'q' } });
 
-      await waitFor(() => {
-        const fuqTitle = getByText('Password must be more than 3 symbols');
-        return fuqTitle;
+      const fuqTitle = await waitFor(() => {
+        return getByText(/Password must be more than 3 symbols/i);
       });
 
-      expect(getByText('Password must be more than 3 symbols')).toBeTruthy();
+      expect(fuqTitle).toBeInTheDocument();
     });
 
     it('Redirect to /badmin after success submit', async () => {
@@ -128,34 +126,34 @@ describe('Login page tests', () => {
       );
 
       // enter text in the login input
-      const loginInput = getByTestId('login-input');
+      const loginInput = getByTestId(/login-input/i);
       fireEvent.change(loginInput, { target: { value: 'TEST' } });
 
       await waitFor(() => {
-        const _loginInput = getByTestId('login-input');
+        const _loginInput = getByTestId(/login-input/i);
         return _loginInput.getAttribute('value') === 'TEST';
       });
 
       // enter text in the pass input
-      const passInput = getByTestId('password-input');
+      const passInput = getByTestId(/password-input/);
       fireEvent.change(passInput, { target: { value: 'TEST_PASSWORD' } });
 
       await waitFor(() => {
-        const _passInput = getByTestId('password-input');
+        const _passInput = getByTestId(/password-input/);
         return _passInput.getAttribute('value') === 'TEST_PASSWORD';
       });
 
       // press the login button
-      const loginButton = getByTestId('button-login');
+      const loginButton = getByTestId(/button-login/);
       fireEvent.click(loginButton);
 
       // wait until a user is redirected to a page where you can find such element
       await waitFor(() => {
-        const buttonOnBadminPage = getByTestId('0');
+        const buttonOnBadminPage = getByTestId(/0/);
         return buttonOnBadminPage;
       });
 
-      expect(getByTestId('0')).toBeTruthy();
+      expect(getByTestId(/0/)).toBeTruthy();
     });
   });
 });

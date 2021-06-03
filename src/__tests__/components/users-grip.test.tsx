@@ -57,7 +57,7 @@ describe('UsersGrip tests', () => {
       </QueryClientProvider>,
     );
 
-    await waitFor(() => getByText('Error!'));
+    await waitFor(() => getByText(/Error!/i));
 
     expect(container).toMatchSnapshot();
   });
@@ -85,7 +85,7 @@ describe('UsersGrip tests', () => {
       </QueryClientProvider>,
     );
 
-    await waitFor(() => getByText('FAKE_LOGIN'));
+    await waitFor(() => getByText(/FAKE_LOGIN_2/i));
 
     expect(container).toMatchSnapshot();
   });

@@ -33,7 +33,7 @@ describe('ToggleIcon tests', () => {
       <ToggleIcon IconFrom={ApiFilled} IconTo={ApiOutlined} onClick={callback} title="Test title" counter={1000} />,
     );
 
-    const iconElement = getByTestId('icon-span');
+    const iconElement = getByTestId(/icon-span/);
     const iconFrom = container.querySelector('svg');
     const iconFromPath = container.querySelector('path')?.getAttribute('d');
 

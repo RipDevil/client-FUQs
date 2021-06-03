@@ -15,8 +15,8 @@ describe('FuqCard tests', () => {
       <FuqCard title="Some title" id={FAKE_ID} text="Some text" />,
     );
 
-    const [elementWithTitle, elementWithText] = [getByText('Some title'), getByText('Some text')];
-    const buttons = getAllByTestId('icon-span');
+    const [elementWithTitle, elementWithText] = [getByText(/Some title/i), getByText(/Some text/i)];
+    const buttons = getAllByTestId(/icon-span/);
 
     expect(elementWithTitle).toBeInTheDocument();
     expect(elementWithText).toBeInTheDocument();
@@ -36,11 +36,11 @@ describe('FuqCard tests', () => {
       </Router>,
     );
 
-    const buttons = getAllByTestId('icon-span');
+    const buttons = getAllByTestId(/icon-span/);
     buttons.forEach((b) => fireEvent.click(b));
 
     const testPageLabel = await waitFor(() => {
-      const clock = getByText('Test page');
+      const clock = getByText(/Test page/i);
       return clock;
     });
 
@@ -51,7 +51,7 @@ describe('FuqCard tests', () => {
     const { getByText } = render(<FuqCard title="Some title" id={FAKE_ID} text="Some text" />);
 
     const titleElement = await waitFor(() => {
-      const clock = getByText('Some title');
+      const clock = getByText(/Some title/i);
       return clock;
     });
 

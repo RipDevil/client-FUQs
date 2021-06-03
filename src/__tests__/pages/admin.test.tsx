@@ -47,7 +47,7 @@ describe('Admin page tests', () => {
     );
 
     await waitFor(() => {
-      const loginButton = getByTestId('button-login');
+      const loginButton = getByTestId(/button-login/);
       return loginButton;
     });
 
@@ -67,7 +67,7 @@ describe('Admin page tests', () => {
       </QueryClientProvider>,
     );
 
-    await waitFor(() => getByText('Actions'));
+    await waitFor(() => getByText(/Actions/i));
 
     expect(container).toMatchSnapshot();
   });
@@ -84,18 +84,18 @@ describe('Admin page tests', () => {
       </QueryClientProvider>,
     );
 
-    const logoutButton = getByTestId('logout-btn');
+    const logoutButton = getByTestId(/logout-btn/);
     fireEvent.click(logoutButton);
 
     await waitFor(() => {
-      const loginButton = getByTestId('button-login');
+      const loginButton = getByTestId(/button-login/);
       return loginButton;
     });
   });
 
   it('On a grip click the menu should change', async () => {
     authUpdate(FAKE_CREDENTIALS);
-    const { getByTitle, getByTestId } = render(
+    const { getByTestId, getAllByTitle } = render(
       <QueryClientProvider client={queryClient}>
         <Router history={createMemoryHistory({ initialEntries: ['/badmin'] })}>
           <Route path={'/badmin'} component={Admin} />
@@ -104,13 +104,13 @@ describe('Admin page tests', () => {
     );
 
     // @mna: default grip rn is the first one => 0
-    expect(getByTitle('Users')).toBeTruthy();
+    expect(getAllByTitle(/Users/i).length).toBeTruthy();
 
-    const itemButton = getByTestId('1');
+    const itemButton = getByTestId(/1/);
     fireEvent.click(itemButton);
 
     await waitFor(() => {
-      const fuqsGripTitle = getByTitle('FUQs');
+      const fuqsGripTitle = getAllByTitle(/FUQs/i);
       return fuqsGripTitle;
     });
   });

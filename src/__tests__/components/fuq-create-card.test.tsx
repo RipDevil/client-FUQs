@@ -18,15 +18,15 @@ describe('Create FUQ card tests', () => {
   it('Should reset form if the reset button has been pressed', async () => {
     const TEST_VALUE = 'TEST VALUE';
     const { getByTestId } = render(<CreateFuqCard onSubmit={jest.fn} />);
-    const clearFormButtonElement = getByTestId('clear-form');
+    const clearFormButtonElement = getByTestId(/clear-form/);
 
-    fireEvent.change(getByTestId('title-input'), { target: { value: TEST_VALUE } });
-    fireEvent.change(getByTestId('text-input'), { target: { value: TEST_VALUE } });
+    fireEvent.change(getByTestId(/title-input/), { target: { value: TEST_VALUE } });
+    fireEvent.change(getByTestId(/text-input/), { target: { value: TEST_VALUE } });
 
     const inputsWithTestValueExist = await waitFor(() => {
       return (
-        getByTestId('title-input').getAttribute('value') === TEST_VALUE &&
-        getByTestId('text-input').innerHTML === TEST_VALUE
+        getByTestId(/title-input/).getAttribute('value') === TEST_VALUE &&
+        getByTestId(/text-input/).innerHTML === TEST_VALUE
       );
     });
     expect(inputsWithTestValueExist).toBeTruthy();
@@ -35,8 +35,8 @@ describe('Create FUQ card tests', () => {
 
     const inputsWithTestValueNotExist = await waitFor(() => {
       return (
-        getByTestId('title-input').getAttribute('value') !== TEST_VALUE &&
-        getByTestId('text-input').innerHTML !== TEST_VALUE
+        getByTestId(/title-input/).getAttribute('value') !== TEST_VALUE &&
+        getByTestId(/text-input/).innerHTML !== TEST_VALUE
       );
     });
 

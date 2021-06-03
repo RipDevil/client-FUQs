@@ -16,7 +16,7 @@ describe('Spinner tests', () => {
 
   it('Should be rendered with text', () => {
     const { getByText } = render(<Spinner text={'Some text'} />);
-    const element = getByText('Some text');
+    const element = getByText(/Some text/i);
     expect(element).toBeInTheDocument();
 
     expect(element).toMatchSnapshot();

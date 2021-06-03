@@ -88,13 +88,13 @@ describe('Create FUQ page tests', () => {
       </QueryClientProvider>,
     );
 
-    fireEvent.change(getByTestId('title-input'), { target: { value: 'string' } });
-    fireEvent.change(getByTestId('text-input'), { target: { value: 'string' } });
+    fireEvent.change(getByTestId(/title-input/), { target: { value: 'string' } });
+    fireEvent.change(getByTestId(/text-input/), { target: { value: 'string' } });
 
-    fireEvent.click(getByTestId('submit-form'));
+    fireEvent.click(getByTestId(/submit-form/));
 
     const isOnAnotherPage = await waitFor(() => {
-      return getByText('Mock Page');
+      return getByText(/Mock Page/i);
     });
 
     expect(isOnAnotherPage).toBeTruthy();

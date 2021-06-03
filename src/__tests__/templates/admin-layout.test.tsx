@@ -18,7 +18,7 @@ describe('AdminLayout tests', () => {
           </span>
         </AdminLayout>,
       );
-      const testedElement = getByTestId('test');
+      const testedElement = getByTestId(/test/);
       expect(testedElement).toBeInTheDocument();
       expect(container).toMatchSnapshot();
     });
@@ -26,8 +26,6 @@ describe('AdminLayout tests', () => {
 
   it('Should render null if no children presented', () => {
     const { container } = render(<AdminLayout></AdminLayout>);
-    const testedElement = container.querySelector('.ant-row');
-    expect(testedElement).toBeEmpty();
     expect(container).toMatchSnapshot();
   });
 });
