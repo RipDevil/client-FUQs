@@ -219,7 +219,11 @@ exports[`Admin page tests Admin page should be rendered with sub elements 1`] = 
           style="padding-left: 24px;"
           tabindex="-1"
         >
-          Users
+          <span
+            class="ant-menu-title-content"
+          >
+            Users
+          </span>
         </li>
         <li
           class="ant-menu-item ant-menu-item-only-child"
@@ -229,9 +233,17 @@ exports[`Admin page tests Admin page should be rendered with sub elements 1`] = 
           style="padding-left: 24px;"
           tabindex="-1"
         >
-          FUQs
+          <span
+            class="ant-menu-title-content"
+          >
+            FUQs
+          </span>
         </li>
       </ul>
+      <div
+        aria-hidden="true"
+        style="display: none;"
+      />
     </div>
     <div
       class="ant-col ant-col-19"
