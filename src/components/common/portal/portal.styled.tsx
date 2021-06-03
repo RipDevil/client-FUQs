@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const PortalComponent = styled.div`
   position: fixed;
@@ -14,8 +13,4 @@ export const PortalComponent = styled.div`
   &:hover {
     right: 10000 !important;
   }
-`;
-
-export const LinkStyled = styled(Link)`
-  margin-bottom: 1em;
 `;

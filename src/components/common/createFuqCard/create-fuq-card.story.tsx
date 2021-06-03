@@ -14,7 +14,7 @@ import { argTypes, args } from './lib';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'Components/Common/FUQ/Create Fuq Card',
+  title: 'Components/Common/fuq/Create Fuq Card',
   component: CreateFuqCardComponent,
   parameters: {
     controls: { sort: 'requiredFirst' },

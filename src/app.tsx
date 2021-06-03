@@ -3,7 +3,7 @@ import { Switch, HashRouter } from 'react-router-dom';
 import { message } from 'antd';
 
 import { Routes } from 'routes';
-import { Portal } from 'components/admin';
+import { Portal } from 'components/common';
 
 message.config({
   duration: 1,

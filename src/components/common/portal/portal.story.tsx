@@ -11,7 +11,7 @@ import doc from './portal.mdx';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'Components/Admin/Portal',
+  title: 'Components/Common/Portal',
   component: PortalComponents,
   parameters: {
     controls: { sort: 'requiredFirst' },
@@ -21,17 +21,7 @@ export default {
   },
 };
 
-export const PrivateRoute: Story = ({ ...props }) => {
-  return (
-    <Router history={createMemoryHistory({ initialEntries: ['/login'] })}>
-      <Route path={'/login'}>
-        <PortalComponents {...props} />
-      </Route>
-    </Router>
-  );
-};
-
-export const PublicRoute: Story = ({ ...props }) => {
+export const Portal: Story = ({ ...props }) => {
   return (
     <Router history={createMemoryHistory({ initialEntries: ['/'] })}>
       <Route path={'/'}>
