@@ -17,7 +17,7 @@ type ItemType = {
 };
 
 const DEFAULT_GRIP: string = '0';
-const Admin: React.FC = () => {
+export const Admin: React.FC = () => {
   const [grip, setGrip] = React.useState<string>('Users');
   const authStore = useStore($auth);
   const [items] = React.useState<ItemType[]>([
@@ -76,5 +76,3 @@ const Admin: React.FC = () => {
     </AdminLayout>
   );
 };
-
-export default Admin;

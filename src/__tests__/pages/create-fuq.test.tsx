@@ -7,7 +7,7 @@ import MockAdapter from 'axios-mock-adapter';
 
 import { FuqType } from 'pages/fuq/model';
 import { configUpdate } from 'config/model';
-import CreateFuq from 'pages/create-fuq';
+import { CreateFuq } from 'pages/create-fuq';
 
 let queryClient: any;
 let mockAxios: any;

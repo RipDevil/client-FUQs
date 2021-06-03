@@ -5,7 +5,7 @@ import { render, waitFor, cleanup } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-import FuqPage from 'pages/fuq';
+import { SingleFuq as FuqPage } from 'pages/fuq';
 
 let queryClient: any;
 let mockAxios: any;

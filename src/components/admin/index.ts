@@ -1,3 +1,3 @@
-export { UsersGrip } from './grips/users';
-export { FuqsGrip } from './grips/fuqs';
-export { Portal } from './portal';
+export * from './grips/users';
+export * from './grips/fuqs';
+export * from './portal';

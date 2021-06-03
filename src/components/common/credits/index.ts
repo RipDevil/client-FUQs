@@ -1,1 +1,1 @@
-export { Credits } from './credits';
+export * from './credits';

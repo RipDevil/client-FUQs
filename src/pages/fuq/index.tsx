@@ -9,7 +9,7 @@ export interface FuqMatchParams {
   id?: string;
 }
 
-const SingleFuq: React.FC<RouteComponentProps<FuqMatchParams>> = (props) => {
+export const SingleFuq: React.FC<RouteComponentProps<FuqMatchParams>> = (props) => {
   const { isFetching, data: fuq, isSuccess, isError, error } = useSingleFuq(props.match.params.id);
 
   return (
@@ -20,5 +20,3 @@ const SingleFuq: React.FC<RouteComponentProps<FuqMatchParams>> = (props) => {
     </Layout>
   );
 };
-
-export default SingleFuq;

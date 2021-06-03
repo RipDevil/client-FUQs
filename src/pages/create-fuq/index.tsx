@@ -12,7 +12,7 @@ export interface CreateFuqMatchParams {
   id?: string;
 }
 
-const CreateFuq: React.FC<RouteComponentProps<CreateFuqMatchParams>> = (props) => {
+export const CreateFuq: React.FC<RouteComponentProps<CreateFuqMatchParams>> = (props) => {
   const { id } = props.match.params;
 
   const { mutateAsync: createFuq, isError, isLoading, isSuccess, data } = usePutFuq();
@@ -46,5 +46,3 @@ const CreateFuq: React.FC<RouteComponentProps<CreateFuqMatchParams>> = (props) =
     </Layout>
   );
 };
-
-export default CreateFuq;

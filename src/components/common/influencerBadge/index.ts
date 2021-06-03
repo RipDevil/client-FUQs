@@ -1,1 +1,1 @@
-export { InfluencerBadge } from './influencer-badge';
+export * from './influencer-badge';

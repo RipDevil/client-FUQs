@@ -1,1 +1,1 @@
-export { ToggleIcon } from './toggle-icon';
+export * from './toggle-icon';

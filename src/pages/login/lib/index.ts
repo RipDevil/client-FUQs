@@ -1,1 +1,1 @@
-export { login, password } from './validation';
+export * from './validation';

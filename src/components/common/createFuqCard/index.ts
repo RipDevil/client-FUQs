@@ -1,1 +1,1 @@
-export { CreateFuqCard } from './create-fuq-card';
+export * from './create-fuq-card';

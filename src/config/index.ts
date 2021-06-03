@@ -1,2 +1,2 @@
-export { ConfigWrapper } from './wrapper';
-export { $config } from './model';
+export * from './wrapper';
+export * from './model';

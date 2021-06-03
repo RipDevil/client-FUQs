@@ -1,3 +1,3 @@
-export { call } from './call';
-export { checkSlash } from './slash';
-export { preparePostParams } from './params';
+export * from './call';
+export * from './slash';
+export * from './params';

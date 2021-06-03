@@ -1,6 +1,6 @@
-export { Credits } from './credits';
-export { FuqCard } from './fuqCard';
-export { Spinner } from './spinner';
-export { ToggleIcon } from './toggleIcon';
-export { CreateFuqCard } from './createFuqCard';
-export { InfluencerBadge } from './influencerBadge';
+export * from './credits';
+export * from './fuqCard';
+export * from './spinner';
+export * from './toggleIcon';
+export * from './createFuqCard';
+export * from './influencerBadge';

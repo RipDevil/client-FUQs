@@ -17,7 +17,7 @@ type FormTypes = {
   password: string;
 };
 
-const Login: React.FC = () => {
+export const Login: React.FC = () => {
   const loginInputRef = React.createRef<Input>();
 
   const history = useHistory<H.History>();
@@ -99,5 +99,3 @@ const Login: React.FC = () => {
     </Layout>
   );
 };
-
-export default Login;

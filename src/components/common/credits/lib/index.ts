@@ -1,2 +1,2 @@
-export { args } from './args';
-export { argTypes } from './argTypes';
+export * from './args';
+export * from './argTypes';
