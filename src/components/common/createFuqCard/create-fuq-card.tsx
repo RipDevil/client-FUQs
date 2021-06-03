@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { Row, Form, FormInstance, Button, Space, Input } from 'antd';
 import { RollbackOutlined, CheckOutlined } from '@ant-design/icons';
 
@@ -24,6 +23,7 @@ export const CreateFuqCard: React.FC<CreateFuqCardProps> = ({ bordered = false, 
 
   React.useEffect(() => {
     titleInputRef.current?.focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function forceSubmit() {

@@ -26,14 +26,14 @@ export const CreateFuq: React.FC<RouteComponentProps<CreateFuqMatchParams>> = (p
 
       history.push(`/fuq/${data._id}`);
     }
-  }, [data, isSuccess]);
+  }, [data, isSuccess, history]);
 
   React.useEffect(() => {
     isError &&
       message.error({
         content: 'Error!',
       });
-  }, [isLoading, isError]);
+  }, [isLoading, isError, history]);
 
   function onFormSubmit(values: NewFuqFormTypes) {
     createFuq(values);
