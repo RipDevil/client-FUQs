@@ -129,21 +129,21 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         1
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         0
-                      </p>
+                      </span>
                     </span>
                   </sup>
                 </span>
@@ -194,31 +194,31 @@ exports[`Config wrapper tests Should render FUQ 1`] = `
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         1
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         6
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         0
-                      </p>
+                      </span>
                     </span>
                   </sup>
                 </span>
@@ -361,21 +361,21 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         1
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         0
-                      </p>
+                      </span>
                     </span>
                   </sup>
                 </span>
@@ -426,31 +426,31 @@ exports[`Config wrapper tests Should render FUQ with params 1`] = `
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         1
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         6
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         0
-                      </p>
+                      </span>
                     </span>
                   </sup>
                 </span>
@@ -593,21 +593,21 @@ exports[`Config wrapper tests Should render error 1`] = `
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         1
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         0
-                      </p>
+                      </span>
                     </span>
                   </sup>
                 </span>
@@ -658,31 +658,31 @@ exports[`Config wrapper tests Should render error 1`] = `
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         1
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         6
-                      </p>
+                      </span>
                     </span>
                     <span
                       class="ant-scroll-number-only"
                       style="transition: none;"
                     >
-                      <p
+                      <span
                         class="ant-scroll-number-only-unit current"
                       >
                         0
-                      </p>
+                      </span>
                     </span>
                   </sup>
                 </span>

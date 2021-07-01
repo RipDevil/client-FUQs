@@ -91,41 +91,41 @@ exports[`ToggleIcon tests Should be rendered with counter more than 0 1`] = `
           class="ant-scroll-number-only"
           style="transition: none;"
         >
-          <p
+          <span
             class="ant-scroll-number-only-unit current"
           >
             1
-          </p>
+          </span>
         </span>
         <span
           class="ant-scroll-number-only"
           style="transition: none;"
         >
-          <p
+          <span
             class="ant-scroll-number-only-unit current"
           >
             0
-          </p>
+          </span>
         </span>
         <span
           class="ant-scroll-number-only"
           style="transition: none;"
         >
-          <p
+          <span
             class="ant-scroll-number-only-unit current"
           >
             0
-          </p>
+          </span>
         </span>
         <span
           class="ant-scroll-number-only"
           style="transition: none;"
         >
-          <p
+          <span
             class="ant-scroll-number-only-unit current"
           >
             0
-          </p>
+          </span>
         </span>
       </sup>
     </span>
@@ -180,101 +180,101 @@ exports[`ToggleIcon tests Should handle clicks 1`] = `
           class="ant-scroll-number-only"
           style="transition: none;"
         >
-          <p
+          <span
             class="ant-scroll-number-only-unit current"
           >
             1
-          </p>
+          </span>
         </span>
         <span
           class="ant-scroll-number-only"
           style="transition: none;"
         >
-          <p
+          <span
             class="ant-scroll-number-only-unit current"
           >
             0
-          </p>
+          </span>
         </span>
         <span
           class="ant-scroll-number-only"
           style="transition: none;"
         >
-          <p
+          <span
             class="ant-scroll-number-only-unit current"
           >
             0
-          </p>
+          </span>
         </span>
         <span
           class="ant-scroll-number-only"
           style="transform: translateY(-100%);"
         >
-          <p
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -900%; left: 0px;"
           >
             1
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -800%; left: 0px;"
           >
             2
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -700%; left: 0px;"
           >
             3
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -600%; left: 0px;"
           >
             4
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -500%; left: 0px;"
           >
             5
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -400%; left: 0px;"
           >
             6
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -300%; left: 0px;"
           >
             7
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -200%; left: 0px;"
           >
             8
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: -100%; left: 0px;"
           >
             9
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit current"
           >
             0
-          </p>
-          <p
+          </span>
+          <span
             class="ant-scroll-number-only-unit"
             style="position: absolute; top: 100%; left: 0px;"
           >
             1
-          </p>
+          </span>
         </span>
       </sup>
     </span>
