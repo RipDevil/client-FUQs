@@ -14,7 +14,7 @@ export default {
   title: 'Components/Common/Portal',
   component: PortalComponents,
   parameters: {
-    controls: { sort: 'requiredFirst' },
+    controls: { sort: "requiredFirst" },
     docs: {
       page: doc,
     },
