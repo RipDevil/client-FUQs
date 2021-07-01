@@ -9,9 +9,6 @@ import { CustomPortalLink } from './custom-portal-link';
 export const Portal: React.FC = () => {
   const location = useLocation<Location>();
 
-  const a = 'a';
-  console.log('a :>> ', a);
-
   return (
     <PortalComponent>
       {location.pathname !== '/' && (
