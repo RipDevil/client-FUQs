@@ -11,7 +11,7 @@ export const Portal: React.FC = () => {
 
   return (
     <PortalComponent>
-      {location.pathname !== '/' && (
+      {location.pathname !== "/" && (
         <Link data-testid="portal-link-home" to="/" component={CustomPortalLink}>
           <HomeOutlined title="Main page" />
         </Link>

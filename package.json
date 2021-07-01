@@ -80,8 +80,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
-      "prettier --config .prettierrc --write",
-      "eslint --fix"
+      "eslint --fix",
+      "prettier --config .prettierrc --write"
     ]
   },
   "browserslist": {
